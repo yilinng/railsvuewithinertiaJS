@@ -7,6 +7,7 @@ import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { InertiaProgress } from '@inertiajs/progress'
 import axios from 'axios'
+import * as Routes from '../routes'
 
 axios.defaults.xsrfHeaderName = "X-CSRF-Token"
 InertiaProgress.init()
@@ -14,8 +15,9 @@ InertiaProgress.init()
 createInertiaApp({
   resolve: name => require(`./Pages/${name}`),
   setup({ el, App, props, plugin }) {
-    createApp({ render: () => h(App, props) })
-      .use(plugin)
-      .mount(el)
+    const app = createApp({ render: () => h(App, props) }).use(plugin)
+    app.config.globalProperties.$route = Routes
+    app.mount(el)
   },
 })
+

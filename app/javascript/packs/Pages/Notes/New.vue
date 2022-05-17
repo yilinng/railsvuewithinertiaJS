@@ -2,14 +2,16 @@
   <div class="mt-5">
     <FlashMessages />
     <h2 class="text-2xl text-center">New Notes</h2>
-    <NoteForm/>
+    <NoteForm v-model:form="form" @submitForm="onSubmit($event)"/>
   </div>
 </template>
 
 <script>
+import { Inertia } from '@inertiajs/inertia'
 import Layout from '../../../Layouts/ApplicationLayout.vue'
 import FlashMessages from '../../../Shared/FlashMessages.vue'
 import NoteForm from './Form'
+
   export default {
     components: {
       layout: Layout,
@@ -28,13 +30,13 @@ import NoteForm from './Form'
       }
     },
     methods: {
-      submit() {
+      onSubmit(data) {
         // This is in a meta tag located within the head tags
         const token = document.querySelector('meta[name="csrf-token"]').content
-        this.$inertia.post('/notes', this.form,
-         {
-          headers: { 'X-CSRF-Token': token }
-         })
+        Inertia.post('/notes', data, {
+          onError: (errors) => console.log(errors),
+          onFinish: (page) => Inertia.get('/notes')
+        })
       }
     }
   }

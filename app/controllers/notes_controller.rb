@@ -35,25 +35,25 @@ class NotesController < ApplicationController
   def create
     note = Note.new(note_params)
     if note.save
-      redirect_to notes_path, notice: 'Note was successfully created.'
+      redirect_to notes_path, notice: 'Note was successfully created.', turbolinks: false
     else
-      redirect_to new_note_path, errors: note.errors 
+      redirect_to new_note_path, errors: note.errors , turbolinks: false
     end
   end
 
   # PATCH/PUT /notes/1 or /notes/1.json
   def update
     if @note.update(note_params)
-      redirect_to notes_path, notice: 'Note was successfully update.'
+      redirect_to notes_path, notice: 'Note was successfully update.', turbolinks: false
     else
-      redirect_to edit_note_path(@note), errors: @note.errors 
+      redirect_to edit_note_path(@note), errors: @note.errors, turbolinks: false 
     end
   end
 
   # DELETE /notes/1 or /notes/1.json
   def destroy
     @note.destroy
-    redirect_to notes_path, notice: 'Note was successfully destroyed.' 
+    redirect_to notes_path, notice: 'Note was successfully destroyed.', turbolinks: false
   end
 
   private

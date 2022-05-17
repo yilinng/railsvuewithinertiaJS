@@ -11,6 +11,7 @@
     "@rails/webpacker": "5.4.3",
     "autoprefixer": "9",
     "postcss": "7",
+    "rails-erb-loader": "^5.5.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "turbolinks": "^5.2.0",
     "vue": "^3.2.33",

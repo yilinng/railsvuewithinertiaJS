@@ -1,11 +1,12 @@
 <template>
   <div class="mt-5">
     <h2 class="text-2xl text-center">Edit Note</h2>
-    <NoteForm/>
+    <NoteForm v-model:form="form"  @submitForm="onSubmit($event)" />
   </div>
 </template>
 
 <script>
+import { Inertia } from '@inertiajs/inertia'
 import NoteForm from './Form'
 import Layout from '../../../Layouts/ApplicationLayout.vue'
   export default {
@@ -25,8 +26,11 @@ import Layout from '../../../Layouts/ApplicationLayout.vue'
       }
     },
     methods: {
-      submit() {
-        this.$inertia.put(this.$routes.note(this.note.id), this.form)
+      onSubmit(data) {
+        Inertia.put(this.$route.note_path(this.note.id), data, {
+          onError: (errors) => console.log(errors),
+          onFinish: (page) => Inertia.get('/notes')
+        })
       }
     }
   }

@@ -17,9 +17,9 @@
           <td class="border px-4 py-2">{{ note.content}}</td>
           <td class="border px-4 py-2">Show</td>
            <td class="border px-4 py-2">
-            <Link :href="$route('note.id')" class="text-blue-700 mr-2">Show</Link>
-            <Link href="/notes/edit" class="text-green-700 mr-2">Edit</Link>
-            <a href="#" @click="onDelete(note.id)" class="text-red-700">Delete</a> <!-- add this link -->
+            <Link :href="noteShow(note)" class="text-blue-700 mr-2">Show</Link>
+            <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
+            <button @click="onDelete(note)" class="text-red-700">Delete</button> <!-- add this link -->
           </td>
         </tr>
       </tbody>
@@ -28,9 +28,11 @@
 </template>
 
 <script>
+import { Inertia } from '@inertiajs/inertia'
 import Layout from '../../../Layouts/ApplicationLayout.vue'
 import FlashMessages from '../../../Shared/FlashMessages.vue'
 import { Link } from '@inertiajs/inertia-vue3'
+
   export default {
     components: {
       layout: Layout,
@@ -43,12 +45,22 @@ import { Link } from '@inertiajs/inertia-vue3'
         required: true,
       }
     },
+     mounted() {
+    console.log(this.$route.note_path(1) )
+    },
     methods: {
-      onDelete(id) {
-        this.$inertia.delete(this.$routes.note(id), {
+      onDelete(note) {
+        Inertia.delete(this.$route.note_path(note.id), {
           onBefore: () => confirm('Are you sure you want to delete this note?'),
+          onFinish: () => Inertia.reload()
         })
-      }
-    }  
+      }, 
+      noteShow(note) {
+        return this.$route.note_path(note.id)
+      },
+      noteEditShow(note) {
+        return this.$route.edit_note_path(note.id)
+      }  
+    }
   }
 </script>
