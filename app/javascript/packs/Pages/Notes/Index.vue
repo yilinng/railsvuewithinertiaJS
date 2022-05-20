@@ -1,8 +1,9 @@
 <template>
   <div class="mt-6">
     <FlashMessages />
-    <h2 class="text-2xl text-center">Notes</h2>
-    <Link href="/notes/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">New Note</Link>
+    <h2 class="text-2xl text-center my-3">Notes</h2>
+    <Link href="/notes/new" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">New Note</Link>
+    <Link href="/" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">Home</Link>
     <table class="table-auto bg-white mx-auto w-full mt-4 shadow">
       <thead>
         <tr>
@@ -52,7 +53,7 @@ import { Link } from '@inertiajs/inertia-vue3'
       onDelete(note) {
         Inertia.delete(this.$route.note_path(note.id), {
           onBefore: () => confirm('Are you sure you want to delete this note?'),
-          onFinish: () => Inertia.reload()
+          onSuccess: (page) => console.log(page) 
         })
       }, 
       noteShow(note) {

@@ -513,6 +513,22 @@ export const edit_rails_conductor_inbound_email_path = __jsr.r({"id":{"r":true},
 
 /**
  * Generates rails route to
+ * /login(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const login_path = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"login"],[1,[2,[8,"."],[3,"format"]]]]]);
+
+/**
+ * Generates rails route to
+ * /logout(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const logout_path = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"logout"],[1,[2,[8,"."],[3,"format"]]]]]);
+
+/**
+ * Generates rails route to
  * /notes/new(.:format)
  * @param {object | undefined} options
  * @returns {string} route path
@@ -736,10 +752,26 @@ export const root_path = __jsr.r({}, [7,"/"]);
 
 /**
  * Generates rails route to
+ * /signup(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const signup_path = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"signup"],[1,[2,[8,"."],[3,"format"]]]]]);
+
+/**
+ * Generates rails route to
  * /rails/active_storage/disk/:encoded_token(.:format)
  * @param {any} encoded_token
  * @param {object | undefined} options
  * @returns {string} route path
  */
 export const update_rails_disk_service_path = __jsr.r({"encoded_token":{"r":true},"format":{}}, [2,[7,"/"],[2,[6,"rails"],[2,[7,"/"],[2,[6,"active_storage"],[2,[7,"/"],[2,[6,"disk"],[2,[7,"/"],[2,[3,"encoded_token"],[1,[2,[8,"."],[3,"format"]]]]]]]]]]]);
+
+/**
+ * Generates rails route to
+ * /users(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const users_path = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"users"],[1,[2,[8,"."],[3,"format"]]]]]);
 

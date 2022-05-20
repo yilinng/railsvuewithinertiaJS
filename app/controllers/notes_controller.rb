@@ -1,9 +1,10 @@
 class NotesController < ApplicationController
   before_action :set_note, only: %i[ show edit update destroy ]
-
+  before_action :require_user
+  
   # GET /notes or /notes.json
   def index
-    notes = Note.all
+    notes = current_user.notes.all
     render inertia: 'Notes/Index', props: {
       notes: notes.as_json(only: [:id, :title, :content])
     }
@@ -33,7 +34,7 @@ class NotesController < ApplicationController
 
   # POST /notes or /notes.json
   def create
-    note = Note.new(note_params)
+    note = current_user.notes.new(note_params)
     if note.save
       redirect_to notes_path, notice: 'Note was successfully created.', turbolinks: false
     else
@@ -59,11 +60,12 @@ class NotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
-      @note = Note.find(params[:id])
+      @note = current_user.notes.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def note_params
-      params.require(:note).permit(:title, :content)
+      user = current_user
+      params.require(:note).permit(:title, :content, :user)
     end
 end

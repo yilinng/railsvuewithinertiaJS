@@ -56,3 +56,7 @@ gem "inertia_rails", "~> 1.12"
 
 
 gem "js-routes", "~> 2.2", :group => :development
+
+gem "bcrypt", "~> 3.1"
+
+gem "jwt", "~> 2.3"

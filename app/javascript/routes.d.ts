@@ -108,6 +108,26 @@ export const edit_rails_conductor_inbound_email_path: ((
 
 /**
  * Generates rails route to
+ * /login(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const login_path: ((
+  options?: {format?: OptionalRouteParameter} & RouteOptions
+) => string) & RouteHelperExtras;
+
+/**
+ * Generates rails route to
+ * /logout(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const logout_path: ((
+  options?: {format?: OptionalRouteParameter} & RouteOptions
+) => string) & RouteHelperExtras;
+
+/**
+ * Generates rails route to
  * /notes/new(.:format)
  * @param {object | undefined} options
  * @returns {string} route path
@@ -398,6 +418,16 @@ export const root_path: ((
 
 /**
  * Generates rails route to
+ * /signup(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const signup_path: ((
+  options?: {format?: OptionalRouteParameter} & RouteOptions
+) => string) & RouteHelperExtras;
+
+/**
+ * Generates rails route to
  * /rails/active_storage/disk/:encoded_token(.:format)
  * @param {any} encoded_token
  * @param {object | undefined} options
@@ -405,6 +435,16 @@ export const root_path: ((
  */
 export const update_rails_disk_service_path: ((
   encoded_token: RequiredRouteParameter,
+  options?: {format?: OptionalRouteParameter} & RouteOptions
+) => string) & RouteHelperExtras;
+
+/**
+ * Generates rails route to
+ * /users(.:format)
+ * @param {object | undefined} options
+ * @returns {string} route path
+ */
+export const users_path: ((
   options?: {format?: OptionalRouteParameter} & RouteOptions
 ) => string) & RouteHelperExtras;
 
