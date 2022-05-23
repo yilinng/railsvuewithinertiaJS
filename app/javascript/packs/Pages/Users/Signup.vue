@@ -20,8 +20,7 @@ import NoteForm from './Form'
     },
     props: {
       note: {
-        type: Object,
-        required: true
+        type: Object
       }
     },
     data() {

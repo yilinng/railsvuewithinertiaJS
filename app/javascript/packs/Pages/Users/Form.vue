@@ -33,8 +33,7 @@ import { Inertia } from '@inertiajs/inertia'
     }, 
     props: {
       form: {
-        type: Object,
-        required: true
+        type: Object
       },
       signup: {
         type: String

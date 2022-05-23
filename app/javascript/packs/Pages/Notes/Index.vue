@@ -46,9 +46,6 @@ import { Link } from '@inertiajs/inertia-vue3'
         required: true,
       }
     },
-     mounted() {
-    console.log(this.$route.note_path(1) )
-    },
     methods: {
       onDelete(note) {
         Inertia.delete(this.$route.note_path(note.id), {
