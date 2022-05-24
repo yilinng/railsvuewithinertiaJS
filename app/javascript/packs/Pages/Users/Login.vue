@@ -18,6 +18,12 @@ import NoteForm from './Form'
       FlashMessages,
       NoteForm
     },
+     // Using a render function
+    layout: (h, page) => h(Layout, () => child),
+
+    // Using the shorthand
+    layout: Layout,
+
     props: {
       note: {
         type: Object

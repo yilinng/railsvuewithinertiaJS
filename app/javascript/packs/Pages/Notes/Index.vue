@@ -40,6 +40,12 @@ import { Link } from '@inertiajs/inertia-vue3'
       FlashMessages,
       Link
     },
+    // Using a render function
+    layout: (h, page) => h(Layout, () => child),
+
+    // Using the shorthand
+    layout: Layout,
+
     props: {
       notes: {
         type: Array,

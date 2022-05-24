@@ -60,7 +60,7 @@ class NotesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
-      @note = current_user.notes.find(params[:id])
+      @note = current_user.notes.find(params[:id]) if current_user
     end
 
     # Only allow a list of trusted parameters through.

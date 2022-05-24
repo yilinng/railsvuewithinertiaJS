@@ -10,6 +10,12 @@
 <script>
 import Layout from '../../../Layouts/ApplicationLayout.vue'
   export default {
+    // Using a render function
+    layout: (h, page) => h(Layout, () => child),
+
+    // Using the shorthand
+    layout: Layout,
+
     props: {
       note: {
         type: Object,
