@@ -35,7 +35,7 @@ import Layout from '../../../Layouts/ApplicationLayout.vue'
       onSubmit(data) {
         Inertia.put(this.$route.note_path(this.note.id), data, {
           onError: (errors) => console.log(errors),
-          onFinish: (page) => Inertia.get('/notes')
+          onFinish: (page) => console.log(page)
         })
       }
     }

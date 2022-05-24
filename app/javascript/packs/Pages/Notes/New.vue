@@ -1,6 +1,5 @@
 <template>
   <div class="mt-5">
-    <FlashMessages />
     <h2 class="text-2xl text-center">New Notes</h2>
     <NoteForm v-model:form="form" @submitForm="onSubmit($event)"/>
   </div>
@@ -9,13 +8,13 @@
 <script>
 import { Inertia } from '@inertiajs/inertia'
 import Layout from '../../../Layouts/ApplicationLayout.vue'
-import FlashMessages from '../../../Shared/FlashMessages.vue'
+//import FlashMessages from '../../../Shared/FlashMessages.vue'
 import NoteForm from './Form'
 
   export default {
     components: {
       layout: Layout,
-      FlashMessages,
+      //FlashMessages,
       NoteForm
     },
     // Using a render function
@@ -41,7 +40,7 @@ import NoteForm from './Form'
         const token = document.querySelector('meta[name="csrf-token"]').content
         Inertia.post('/notes', data, {
           onError: (errors) => console.log(errors),
-          onFinish: (page) => Inertia.get('/notes')
+          onFinish: (page) => console.log(page)
         })
       }
     }
