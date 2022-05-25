@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submitTo" class="rounded-sm bg-white shadow px-8 py-6">
+  <form @submit.prevent="submitTo" class="rounded-sm bg-white shadow px-8 py-6 mx-auto w-full xl:w-2/3">
     <span v-if="name">
       <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username</label>
       <span v-if="usernameErr" class="text-red-500 font-bold">{{ usernameErr }}</span>
