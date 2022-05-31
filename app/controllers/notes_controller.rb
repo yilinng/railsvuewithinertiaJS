@@ -34,11 +34,13 @@ class NotesController < ApplicationController
 
   # POST /notes or /notes.json
   def create
-    note = current_user.notes.new(note_params)
-    if note.save
+    @note = current_user.notes.new(note_params)
+    if @note.save
       redirect_to notes_path, notice: 'Note was successfully created.', turbolinks: false
+      #render json: @note, status: :created, location: @note,  turbolinks: false
     else
       redirect_to new_note_path, errors: note.errors , turbolinks: false
+      #render json: { error: "note create fail, please try again" }
     end
   end
 
@@ -46,14 +48,17 @@ class NotesController < ApplicationController
   def update
     if @note.update(note_params)
       redirect_to notes_path, notice: 'Note was successfully update.', turbolinks: false
+      #render json:  @note, notice: 'Note was successfully update.'
     else
-      redirect_to edit_note_path(@note), errors: @note.errors, turbolinks: false 
+      redirect_to edit_note_path(@note), errors: @note.errors, turbolinks: false
+      #render json: @note.errors, status: :unprocessable_entity 
     end
   end
 
   # DELETE /notes/1 or /notes/1.json
   def destroy
     @note.destroy
+    #render json: { notice: 'Note was successfully destroyed.' }, turbolinks: false
     redirect_to notes_path, notice: 'Note was successfully destroyed.', turbolinks: false
   end
 

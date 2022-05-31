@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'Signup in successfully.', turbolinks: false
     else
-      render json: { error: "Invalid username or password" }
+      render json: { error: "Invalid email or password" }
     end
   end
 

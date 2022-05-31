@@ -79,7 +79,8 @@ import { Link } from '@inertiajs/inertia-vue3'
       onDelete(note) {
         Inertia.delete(this.$route.note_path(note.id), {
           onBefore: () => confirm('Are you sure you want to delete this note?'),
-          onSuccess: (page) => console.log(page) 
+          onSuccess: (page) => console.log(page)
+          //onFinish: () => Inertia.reload()
         })
       }, 
       noteShow(note) {

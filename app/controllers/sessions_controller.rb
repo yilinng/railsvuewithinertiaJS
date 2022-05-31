@@ -15,7 +15,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path, notice: 'Logged in successfully.', turbolinks: false
     else
-      redirect_to request.referrer, alert: "Invalid username or password" , turbolinks: false
+      #redirect_to request.referrer, alert: "Invalid email or password" , turbolinks: false
+      render json: { error: "Invalid email or password" }
     end
   end
   

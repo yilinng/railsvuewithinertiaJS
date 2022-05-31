@@ -40,7 +40,7 @@ import NoteForm from './Form'
         const token = document.querySelector('meta[name="csrf-token"]').content
         Inertia.post('/notes', data, {
           onError: (errors) => console.log(errors),
-          onFinish: (page) => console.log(page)
+          onSuccess: (page) => console.log(page)//Inertia.visit('/notes') 
         })
       }
     }
