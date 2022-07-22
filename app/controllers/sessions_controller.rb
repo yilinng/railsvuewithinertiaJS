@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
   #login page
   def new
     user = User.new
@@ -7,16 +7,28 @@ class SessionsController < ApplicationController
       user: user.as_json
     }
   end
-
+  #https://github.com/inertiajs/inertia-rails  
+  #https://guides.rubyonrails.org/routing.html
   #login actions
   def create
     user = User.find_by(email: params[:session][:email].downcase)
+
+    #puts user, 'from session'
+   
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: 'Logged in successfully.', turbolinks: false
+      #redirect_to root_path, notice: 'Logged in successfully.', turbolinks: false
+      render inertia: 'Home', props: {
+        flash: {
+          notice: "Logged in successfully."
+        }
+      }
     else
-      #redirect_to request.referrer, alert: "Invalid email or password" , turbolinks: false
-      render json: { error: "Invalid email or password" }
+      render inertia: 'Users/Login', props: {
+        flash: {
+          alert: "Invalid email or password."
+        }
+      }
     end
   end
   

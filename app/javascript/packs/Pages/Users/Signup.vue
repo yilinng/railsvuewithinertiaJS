@@ -39,7 +39,7 @@ import NoteForm from './Form'
         const token = document.querySelector('meta[name="csrf-token"]').content
         Inertia.post('/signup', data, {
           onError: (errors) => console.log(errors),
-          onSuccess: (page) => console.log(page)
+          onSuccess: (page) => Inertia.visit('/', { preserveScroll: true })//console.log(page)
         })
       }
     }

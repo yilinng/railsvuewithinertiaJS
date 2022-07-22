@@ -40,7 +40,7 @@ class NotesController < ApplicationController
       #render json: @note, status: :created, location: @note,  turbolinks: false
     else
       redirect_to new_note_path, errors: note.errors , turbolinks: false
-      #render json: { error: "note create fail, please try again" }
+      #render json: @note.errors, status: :unprocessable_entity
     end
   end
 
@@ -51,7 +51,7 @@ class NotesController < ApplicationController
       #render json:  @note, notice: 'Note was successfully update.'
     else
       redirect_to edit_note_path(@note), errors: @note.errors, turbolinks: false
-      #render json: @note.errors, status: :unprocessable_entity 
+      #render json: @note.errors, status: :unprocessable_entity
     end
   end
 
