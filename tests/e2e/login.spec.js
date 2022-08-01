@@ -64,3 +64,13 @@ test('expect login failed with missing password', async ({ page }) => {
   // Make a few checks that will not stop the test when failed...
   await expect.soft(page.locator('.text-red-500')).toHaveText('password have to input..');    
 });
+
+test('expect redirect to login page', async ({ page }) => {
+
+  await page.goto('/notes');
+  // Expects the URL to contain intro.
+  await expect(page).toHaveURL(/.*login/);
+
+  // Make a few checks that will not stop the test when failed...
+  await expect.soft(page.locator('.notice p')).toHaveText('You must be logged in to perform that action.');    
+});

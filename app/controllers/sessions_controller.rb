@@ -17,12 +17,7 @@ class SessionsController < ApplicationController
    
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      #redirect_to root_path, notice: 'Logged in successfully.', turbolinks: false
-      render inertia: 'Home', props: {
-        flash: {
-          notice: "Logged in successfully."
-        }
-      }
+      redirect_to root_path, notice: 'Logged in successfully.', turbolinks: false
     else
       render inertia: 'Users/Login', props: {
         flash: {

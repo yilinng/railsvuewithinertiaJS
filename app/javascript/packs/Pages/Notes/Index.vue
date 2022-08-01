@@ -20,7 +20,7 @@
            <div class="flex justify-between">
             <span class="px-4 py-2 font-bold">Action</span>
             <span class="px-4 py-2"> 
-              <Link :href="noteShow(note)" class="text-blue-700 mr-2">Show</Link>
+              <Link :href="noteShow(note)" class="text-blue-700 mr-2 showLink">Show</Link>
               <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
               <button @click="onDelete(note)" class="text-red-700">Delete</button>
             </span>
@@ -40,7 +40,7 @@
             <td class="border px-4 py-2">{{ truncateString(note.title, 20) }}</td>
             <td class="border px-4 py-2">{{ truncateString(note.content, 30) }}</td>
             <td class="border px-4 py-2">
-                <Link :href="noteShow(note)" class="text-blue-700 mr-2">Show</Link>
+                <Link :href="noteShow(note)" class="text-blue-700 mr-2 showLink">Show</Link>
                 <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
                 <button @click="onDelete(note)" class="text-red-700">Delete</button>
             </td>
@@ -78,7 +78,7 @@ import { Link } from '@inertiajs/inertia-vue3'
     methods: {
       onDelete(note) {
         Inertia.delete(this.$route.note_path(note.id), {
-          onBefore: () => confirm('Are you sure you want to delete this note?'),
+          //onBefore: () => confirm('Are you sure you want to delete this note?'),
           onSuccess: (page) => console.log(page)
           //onFinish: () => Inertia.reload()
         })

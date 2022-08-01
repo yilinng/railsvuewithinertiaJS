@@ -155,12 +155,16 @@ test('show note success', async ({ page }) => {
   // Click the get notes link.
   await noteLink.click();
 
-  const showLink = page.locator('text=Show').last();
+  const showLink = page.locator('.showLink').last();
  
+  await expect(showLink).toContainText(/Show/);
   await showLink.click();
 
-  const locator = page.locator('.title');
-  await expect(locator).not.toBeEmpty();
+  const title = page.locator('.title');
+  await expect(title).not.toBeEmpty();
+
+  const content = page.locator('.content');
+  await expect(content).not.toBeEmpty();
 
 });
 
@@ -177,14 +181,7 @@ test('delete note success', async ({ page }) => {
   const deleteLink = page.locator('text=Delete').last();
  
   // Expect an attribute "to be strictly equal" to the value.
-  //await expect(editLink).toHaveAttribute('href', '/notes');
   await deleteLink.click();
-
-  page.on('dialog', async dialog => {
-    console.log(dialog.message());
-    await dialog.accept();
-  });
-  await page.evaluate(() => confirm('Are you sure you want to delete this note?'));
 
   await expect.soft(page.locator('.notice p')).toHaveText('Note was successfully destroyed.');    
 
