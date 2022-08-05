@@ -5,20 +5,13 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7.3
 
-* System dependencies
+* Initial setup 
+docker-compose build
+docker-compose exec web bash
+root@d0cf1ad9ff4c:/app# rake db:reset
+root@d0cf1ad9ff4c:/app# rails webpacker:install key n on all options
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Running the Rails app
+docker-compose up or docker-compose up -d

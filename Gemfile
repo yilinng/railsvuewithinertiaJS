@@ -34,6 +34,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'annotate'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -53,8 +54,6 @@ group :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'faker'
   gem 'factory_bot_rails'
-  gem "knock", github: "nsarno/knock", branch: "master",
-    ref: "9214cd027422df8dc31eb67c60032fbbf8fc100b"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -62,10 +61,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "inertia_rails", "~> 1.12"
 
-
 gem "js-routes", "~> 2.2"
 
 gem "bcrypt", "~> 3.1"
 
 gem "jwt", "~> 2.2.1"
 
+gem "sidekiq", "~> 5.2.7"
