@@ -9,12 +9,19 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN mkdir /app
-WORKDIR /app
 
-COPY Gemfile* package.json yarn.lock /app/
+RUN mkdir /myapp
+WORKDIR /myapp
+
+# Copy the Gemfile and Gemfile.lock from app root directory into the /myapp/ folder in the docker container
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+
+COPY package.json /myapp/package.json
+COPY yarn.lock /myapp/yarn.lock
 
 RUN gem install bundler -v 2.1.4 && \
-  bundle install --jobs 20
+  bundle install --jobs 20 && \
+  yarn install --check-files
 
-COPY . /app
+COPY . /myapp

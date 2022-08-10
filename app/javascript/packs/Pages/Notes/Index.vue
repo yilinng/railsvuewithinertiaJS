@@ -22,7 +22,13 @@
             <span class="px-4 py-2"> 
               <Link :href="noteShow(note)" class="text-blue-700 mr-2 showLink">Show</Link>
               <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
-              <button @click="onDelete(note)" class="text-red-700">Delete</button>
+              <button @click="onDelete(note)" class="text-red-700">Delete</button>    
+            </span>
+            <span class="px-4 py-2 font-bold">Async</span>
+            <span class="px-4 py-2 font-bold">
+              <button @click="noteLike(note)" class="text-yellow-500 mr-2">
+                Likes: {{ note.likes_count == 0 ? `is zero${note.likes_count}`: `is not zero ${note.likes_count}` }} 
+              </button>
             </span>
           </div>
       </div>
@@ -33,6 +39,7 @@
             <th class="border px-4 py-2 text-xl w-96">Title</th>
             <th class="border px-4 py-2 text-xl w-96">Content</th>
             <th class="border px-4 py-2 text-xl w-96">Action</th>
+            <th class="border px-4 py-2 text-xl w-96">Async</th>
           </tr>
         </thead>
         <tbody>
@@ -43,6 +50,11 @@
                 <Link :href="noteShow(note)" class="text-blue-700 mr-2 showLink">Show</Link>
                 <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
                 <button @click="onDelete(note)" class="text-red-700">Delete</button>
+            </td>
+            <td class="border px-4 py-2">
+                <button @click="noteLike(note)" class="text-yellow-500 mr-2">
+                  Likes: {{ note.likes_count == 0 ? `is zero${note.likes_count}`: `is not zero ${note.likes_count}`}} 
+                </button>
             </td>
           </tr>
         </tbody>
@@ -77,6 +89,7 @@ import { Link } from '@inertiajs/inertia-vue3'
     },
     methods: {
       onDelete(note) {
+        //https://github.com/railsware/js-routes
         Inertia.delete(this.$route.note_path(note.id), {
           //onBefore: () => confirm('Are you sure you want to delete this note?'),
           onSuccess: (page) => console.log(page)
@@ -88,6 +101,11 @@ import { Link } from '@inertiajs/inertia-vue3'
       },
       noteEditShow(note) {
         return this.$route.edit_note_path(note.id)
+      },
+      noteLike(note) {
+         Inertia.put(`notes/${note.id}/increment`, {
+          onSuccess: (page) => console.log(page)
+        })
       },
       truncateString(str, num) {
         if (str.length > num) {

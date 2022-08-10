@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :notes
+  put 'notes/:id/increment', to: "notes#increment"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resource :users, only: [:create]
   root 'pages#home'

@@ -1,19 +1,19 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[ show edit update destroy ]
+  before_action :set_note, only: %i[ show edit update destroy increment ]
   before_action :require_user
   
   # GET /notes or /notes.json
   def index
     notes = current_user.notes.all
     render inertia: 'Notes/Index', props: {
-      notes: notes.as_json(only: [:id, :title, :content])
+      notes: notes.as_json(only: [:id, :title, :content, :likes_count])
     }
   end
 
   # GET /notes/1 or /notes/1.json
   def show
     render inertia: 'Notes/Show', props: {
-      note: @note.as_json(only: [:id, :title, :content])
+      note: @note.as_json(only: [:id, :title, :content, :likes_count])
     }
   end
 
@@ -28,7 +28,7 @@ class NotesController < ApplicationController
   # GET /notes/1/edit
   def edit
     render inertia: 'Notes/Edit', props: {
-      note: @note.as_json(only: [:id, :title, :content])
+      note: @note.as_json(only: [:id, :title, :content, :likes_count])
     }
   end
 
@@ -62,6 +62,12 @@ class NotesController < ApplicationController
     redirect_to notes_path, notice: 'Note was successfully destroyed.', turbolinks: false
   end
 
+  # PATCH/PUT /notes/1/increment 
+  def increment
+    ::IncrementCountWorker.perform_async(params[:id])
+    redirect_to notes_path, notice: 'Note async increment.', turbolinks: false
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_note
@@ -70,7 +76,6 @@ class NotesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def note_params
-      user = current_user
-      params.require(:note).permit(:title, :content, :user)
+      params.require(:note).permit(:title, :content, :user_id)
     end
 end
