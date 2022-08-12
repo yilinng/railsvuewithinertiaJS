@@ -2,7 +2,6 @@ class IncrementCountWorker
   include Sidekiq::Worker
   #ensure that Sidekiq does not retry the upload in the case of failure.
   sidekiq_options retry: false
-
   # a ||= 100, https://www.rubyguides.com/2018/07/ruby-operators/
     #(defined?(a) && a) ? a : a = 100
     #“If a doesn’t exist or if it is false or nil then assign 100 to it, 
