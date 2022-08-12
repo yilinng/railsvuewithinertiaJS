@@ -27,7 +27,7 @@
             <span class="px-4 py-2 font-bold">Async</span>
             <span class="px-4 py-2 font-bold">
               <button @click="noteLike(note)" class="text-yellow-500 mr-2">
-                Likes: {{ note.likes_count == 0 ? `is zero${note.likes_count}`: `is not zero ${note.likes_count}` }} 
+                Likes: {{ note.likes_count }} 
               </button>
             </span>
           </div>
@@ -53,7 +53,7 @@
             </td>
             <td class="border px-4 py-2">
                 <button @click="noteLike(note)" class="text-yellow-500 mr-2">
-                  Likes: {{ note.likes_count == 0 ? `is zero${note.likes_count}`: `is not zero ${note.likes_count}`}} 
+                  Likes: {{ note.likes_count }} 
                 </button>
             </td>
           </tr>

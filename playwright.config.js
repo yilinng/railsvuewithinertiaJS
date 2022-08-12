@@ -17,10 +17,19 @@ const config = {
 
   // Forbid test.only on CI
   forbidOnly: !!process.env.CI,
+  //will help our tests work one by one.
+  fullyParallel: false,
+  //https://dev.to/kantarci/nextjs-playwright-github-actions-boilerplate-497d
+  reporter: [ ['junit', { outputFile: 'results.xml' }] ],
 
   testDir: '.',
   testMatch: /.*.spec.js/,
   testIgnore: '**/spec/**',
+
+  webServer: {
+    command: "yarn build && yarn serve",
+    port: 3000,
+  },
 
   use: {
     baseURL: 'http://localhost:3000',//env[process.env.ENV],//
