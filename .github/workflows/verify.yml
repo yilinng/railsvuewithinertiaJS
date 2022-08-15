@@ -38,7 +38,7 @@ jobs:
           yarn install --pure-lockfile
 
       - name: Install Playwright
-        run: yarn create playwright  
+        run: npx playwright install --with-deps  
 
       - name: Install Dependencies
         run: |
@@ -75,7 +75,7 @@ jobs:
           RAILS_ENV: test
         run: |
            npx playwright test 
-           
+
       - uses: actions/upload-artifact@v2
         if: always()
         with:
