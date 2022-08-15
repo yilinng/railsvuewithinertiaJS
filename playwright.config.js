@@ -27,7 +27,7 @@ const config = {
   testIgnore: '**/spec/**',
 
   webServer: {
-    command: "npm run build && npm run serve",
+    command: "npm run serve",
     port: 3000,
   },
 
