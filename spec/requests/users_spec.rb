@@ -16,44 +16,12 @@ RSpec.describe 'user auth', type: :request do
       }})
     end
 
-    it 'update /notes/9' do
-      put "/notes/9", params: {
-        note: {
-          "title"=>"inertia_rails", 
-          "content"=>"Rails 7 specific frontend docs coming soon. For now."
-        } 
-      }
-    end
-
-    it 'show /notes/9' do
-      get "/notes/9"
-      expect_inertia.to include_props({:note=>
-        {"id"=>9, "title"=>"inertia_rails", 
-        "content"=>"Rails 7 specific frontend docs coming soon. For now."}}
-      )
-    end  
-
-  #  it 'delete note' do
-  #    delete "/notes/8"
-  #  end
-
-    it 'show note list' do
-      get "/notes"
-
-      expect_inertia.to include_props({ 
-        :notes=>[     
-          {"id"=>10, "title"=>"test123 from respec", "content"=>"test here"},
-          {"id"=>9, "title"=>"inertia_rails", "content"=>"Rails 7 specific frontend docs coming soon. For now."}
-          ]
-      })
-    end
-
-=begin
+    
     it 'post note' do
       post "/notes", params: { 
         note: {
-          title: "test12 from respec", 
-          content: "Assertions"
+          title: "inertia_rails", 
+          content: "Rails 7 specific frontend docs coming soon. For now."
         } 
       }
       expect_inertia.to include_props({ flash: {
@@ -61,7 +29,42 @@ RSpec.describe 'user auth', type: :request do
       }})
      
     end
-=end
+
+    it 'show /notes/1' do
+      get "/notes/1"
+      expect_inertia.to include_props({:note=>
+        {"id"=>1, "title"=>"inertia_rails", 
+        "content"=>"Rails 7 specific frontend docs coming soon. For now."}}
+      )
+    end  
+
+    it 'update /notes/1' do
+      put "/notes/1", params: {
+        note: {
+          "title"=>"inertia_rails rspec", 
+          "content"=>"Rails 7 specific frontend docs coming soon. For now."
+        } 
+      }
+    end
+
+  #  it 'delete /notes' do
+  #    delete "/notes"
+  #  end
+
+    it 'show note list' do
+      get "/notes"
+
+      expect_inertia.to include_props({ 
+        :notes=>[{
+          "id"=>1,
+          "title"=>"inertia_rails rspec", 
+          "content"=>"Rails 7 specific frontend docs coming soon. For now."
+        }]
+      })
+    end
+
+
+
 end
   
   describe 'POST/Login with invalid parameters', inertia: true do
