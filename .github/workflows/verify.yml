@@ -74,8 +74,8 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
         run: |
-           npx playwright test e2e --reporter=html --config playwright.config.js
-
+           npx playwright test 
+           
       - uses: actions/upload-artifact@v2
         if: always()
         with:
