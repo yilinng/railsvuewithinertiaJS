@@ -74,7 +74,7 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
         run: |
-          npm run test
+          yarn create playwright
 
       - uses: actions/upload-artifact@v2
         if: always()
