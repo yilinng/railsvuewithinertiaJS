@@ -74,7 +74,7 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
         run: |
-          yarn test
+          npm run test
 
       - uses: actions/upload-artifact@v2
         if: always()
