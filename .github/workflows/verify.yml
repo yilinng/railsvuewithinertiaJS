@@ -51,7 +51,7 @@ jobs:
 
       - name: Setup test database
         env:
-          DB_HOST: localhost
+          POSTGRES_HOST: localhost
           RAILS_ENV: test
           DB_USER_PASSWORD: postgres
         run: |
@@ -59,17 +59,17 @@ jobs:
 
       - name: Build and test with rspec
         env:
-          DB_HOST: postgres
+          POSTGRES_HOST: localhost
           RAILS_ENV: test
-          DB_USER_PASSWORD: postgres
+          POSTGRES_PASSWORD: postgres
         run: |
           bundle exec rspec spec/requests
 
       - name: Build and test with Playwright tests
         env:
-          DB_USER_PASSWORD: postgres
-          DB_HOST: postgres
+          POSTGRES_HOST: localhost
           RAILS_ENV: test
+          POSTGRES_PASSWORD: postgres
         run: |
            npx playwright test 
 
