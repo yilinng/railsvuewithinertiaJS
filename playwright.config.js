@@ -26,11 +26,6 @@ const config = {
   testMatch: /.*.spec.js/,
   testIgnore: '**/spec/**',
 
-  webServer: {
-    command: "npm run serve",
-    port: 3000,
-  },
-
   use: {
     baseURL: 'http://localhost:3000',//env[process.env.ENV],//
     headless: false,
