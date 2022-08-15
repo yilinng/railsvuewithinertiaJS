@@ -28,7 +28,7 @@ const config = {
 
   use: {
     baseURL: 'http://localhost:3000',//env[process.env.ENV],//
-    headless: false,
+    headless: true,
     screenshot: 'on',
     trace: 'on',
     ignoreHTTPSErrors: true,
