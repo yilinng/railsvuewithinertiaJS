@@ -71,7 +71,7 @@ jobs:
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
         run: |
-          npx playwright test --project=chromium --config playwright.config.js
+          bundle exec rails s -p 3000 -b '0.0.0.0'" && npx playwright test --project=chromium 
 
       - uses: actions/upload-artifact@v2
         if: always()
