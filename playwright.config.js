@@ -27,7 +27,7 @@ const config = {
   testIgnore: '**/spec/**',
 
   use: {
-    baseURL: 'http://localhost:3000',//env[process.env.ENV],//
+    baseURL: process.env.URL || 'http://localhost:3000',//env[process.env.ENV],//
     headless: true,
     screenshot: 'on',
     trace: 'on',
