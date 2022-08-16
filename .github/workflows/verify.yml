@@ -73,7 +73,7 @@ jobs:
         with:
           wait-on: 'http://localhost:3000'  
         run: |
-           npx playwright test --project=chromium --config playwright.config.js
+          npx playwright test --project=chromium --config playwright.config.js
 
       - uses: actions/upload-artifact@v2
         if: always()
