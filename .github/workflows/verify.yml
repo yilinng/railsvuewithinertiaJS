@@ -68,6 +68,10 @@ jobs:
           bundle exec rails db:prepare
 
       - name: Start server in the background
+        env:
+          DB_HOST: localhost
+          RAILS_ENV: test
+          POSTGRES_PASSWORD: postgres
         run: |
           bundle exec rails server &
           sleep 5 && 
