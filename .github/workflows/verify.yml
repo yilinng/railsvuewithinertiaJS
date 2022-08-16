@@ -70,8 +70,10 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
+        with:
+          wait-on: 'http://localhost:3000'  
         run: |
-           npx playwright test --project=chromium
+           npx playwright test --project=chromium --config playwright.config.js
 
       - uses: actions/upload-artifact@v2
         if: always()
