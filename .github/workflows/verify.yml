@@ -26,6 +26,7 @@ jobs:
         uses: ruby/setup-ruby@v1.80.0
         with:
           ruby-version: 2.7.3
+          bundler-cache: true
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -44,13 +45,6 @@ jobs:
           sudo apt install -yqq libpq-dev
           gem install bundler
 
-      - name: Cache gems # You can cache your gems to make the workflow run faster
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
       - name: Install gems
         run: |
           bundle config path vendor/bundle
