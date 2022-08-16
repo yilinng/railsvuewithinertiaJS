@@ -20,28 +20,24 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
+
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v1.80
         with:
           ruby-version: 2.7.3
-          bundler-cache: true
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
+          node-version: 14
           cache: 'npm'
+
+      - uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
-      - name: Run Playwright tests
-        run: npx playwright test
-
+        
       - name: Install Dependencies
         run: |
           sudo apt install -yqq libpq-dev
@@ -70,13 +66,13 @@ jobs:
         run: |
           bundle exec rspec spec/requests
 
-      - name: Build and test with Playwright tests
+      - name: Run and test with Playwright tests
         env:
           DB_HOST: localhost
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
         run: |
-          bundle exec rails s -p 3000 -b '0.0.0.0' && npx playwright test --project=chromium 
+          bundle exec rails s -p 3000 -b '0.0.0.0' && npm test 
 
       - uses: actions/upload-artifact@v2
         if: always()
