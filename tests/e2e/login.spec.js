@@ -14,7 +14,7 @@ test('expect login success and logout success', async ({ page }) => {
     // Expect an attribute "to be strictly equal" to the value.
     //https://playwright.dev/docs/navigations#custom-wait
     //await expect(noteLink).toHaveAttribute('href', '/notes')
-    const element = await page.waitForSelector('text=Notes');
+    const element = await page.waitForSelector('a[href*="notes"]');
     console.log('Loaded href: ' + await element.getAttribute('href'));
 
     await expect(page.locator('text=Notes')).toHaveAttribute('href', '/notes');
