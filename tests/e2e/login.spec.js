@@ -32,9 +32,9 @@ test('expect login failed', async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // Make a few checks that will not stop the test when failed...
-  //const element = await page.waitForSelector('.alert p');
-  //await element.toHaveText('Invalid email or password.');
-  await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');   
+  const element = await page.waitForSelector('.alert p');
+  await element.toHaveText('Invalid email or password.');
+  //await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');   
 });
 
 
