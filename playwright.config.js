@@ -18,7 +18,7 @@ const config = {
   // Forbid test.only on CI
   forbidOnly: !!process.env.CI,
   //will help our tests work one by one.
-  fullyParallel: false,
+  fullyParallel: true,
   //https://dev.to/kantarci/nextjs-playwright-github-actions-boilerplate-497d
   reporter: [ ['junit', { outputFile: 'results.xml' }] ],
 
