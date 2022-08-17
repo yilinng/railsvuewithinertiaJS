@@ -212,6 +212,11 @@ build-iPhoneSimulator/
 /.bundle/
 /lib/bundler/man/
 
+results.xml
+
+/test-results
+
+
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
 # Gemfile.lock
