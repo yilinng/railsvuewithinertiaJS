@@ -524,14 +524,6 @@ export const edit_rails_conductor_inbound_email_path = __jsr.r({"id":{"r":true},
 
 /**
  * Generates rails route to
- * /increment_async(.:format)
- * @param {object | undefined} options
- * @returns {string} route path
- */
-export const increment_async_path = __jsr.r({"format":{}}, [2,[7,"/"],[2,[6,"increment_async"],[1,[2,[8,"."],[3,"format"]]]]]);
-
-/**
- * Generates rails route to
  * /login(.:format)
  * @param {object | undefined} options
  * @returns {string} route path

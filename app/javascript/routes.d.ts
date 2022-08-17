@@ -109,16 +109,6 @@ export const edit_rails_conductor_inbound_email_path: ((
 
 /**
  * Generates rails route to
- * /increment_async(.:format)
- * @param {object | undefined} options
- * @returns {string} route path
- */
-export const increment_async_path: ((
-  options?: {format?: OptionalRouteParameter} & RouteOptions
-) => string) & RouteHelperExtras;
-
-/**
- * Generates rails route to
  * /login(.:format)
  * @param {object | undefined} options
  * @returns {string} route path
