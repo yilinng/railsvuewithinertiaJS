@@ -15,7 +15,7 @@ test('expect login success and logout success', async ({ page }) => {
     //https://playwright.dev/docs/navigations#custom-wait
     //await expect(noteLink).toHaveAttribute('href', '/notes')
 
-    await page.locator('text=Logout').click();
+    //await page.locator('text=Logout').click();
 
     // Make a few checks that will not stop the test when failed...
     //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
@@ -35,7 +35,6 @@ test('expect login failed', async ({ page }) => {
 
   // Make a few checks that will not stop the test when failed...
   //await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');
-  page.waitForSelector('.alert p', {state: "attached"});
   await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');    
 });
 
