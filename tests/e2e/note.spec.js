@@ -7,18 +7,19 @@ test.beforeEach(async ({ page }) => {
   await page.locator('input[id="email"]').fill('test12@test.com');
   await page.locator('input[id="password"]').fill('test12');
   await page.locator('button[type="submit"]').click();
+  await page.goto('/notes');
 });
 
 
 test('expect login success and show noteList', async ({ page }) => {
     // create a locator
-    const noteLink = page.locator('text=Notes');
+    //const noteLink = page.locator('text=Notes');
 
     // Expect an attribute "to be strictly equal" to the value.
-    await expect(noteLink).toHaveAttribute('href', '/notes');
+    //await expect(noteLink).toHaveAttribute('href', '/notes');
 
     // Click the get notes link.
-    await noteLink.click();
+    //await noteLink.click();
 
     const newnoteLink = page.locator('text=New Note');
 
@@ -35,13 +36,13 @@ test('expect login success and show noteList', async ({ page }) => {
 
 test('create new note success', async ({ page }) => {
   // create a locator
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  //await expect(noteLink).toHaveAttribute('href', '/notes');
 
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -64,13 +65,13 @@ test('create new note success', async ({ page }) => {
 
 test('create new note but missing title', async ({ page }) => {
   // create a locator
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  //await expect(noteLink).toHaveAttribute('href', '/notes');
 
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -93,13 +94,13 @@ test('create new note but missing title', async ({ page }) => {
 
 test('create new note but missing content', async ({ page }) => {
   // create a locator
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  //await expect(noteLink).toHaveAttribute('href', '/notes');
 
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -122,13 +123,13 @@ test('create new note but missing content', async ({ page }) => {
 
 test('update note success', async ({ page }) => {
   // create a locator
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  //await expect(noteLink).toHaveAttribute('href', '/notes');
 
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
 
   const editLink = page.locator('text=Edit').last();
  
@@ -147,13 +148,13 @@ test('update note success', async ({ page }) => {
 });
 
 test('show note success', async ({ page }) => {
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  //await expect(noteLink).toHaveAttribute('href', '/notes');
 
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
 
   const showLink = page.locator('.showLink').last();
  
@@ -170,13 +171,13 @@ test('show note success', async ({ page }) => {
 
 test('delete note success', async ({ page }) => {
   // create a locator
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  //await expect(noteLink).toHaveAttribute('href', '/notes');
 
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
 
   const deleteLink = page.locator('text=Delete').last();
  
