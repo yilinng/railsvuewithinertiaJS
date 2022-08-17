@@ -18,7 +18,7 @@ test('expect login success and logout success', async ({ page }) => {
     // Make a few checks that will not stop the test when failed...
     //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
 
-    await expect(page).not.toHaveURL(/.*notes/);    
+    await expect(page).not.toHaveURL(/.*login/);    
 });
 
 
@@ -32,9 +32,7 @@ test('expect login failed', async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // Make a few checks that will not stop the test when failed...
-  const element = await page.waitForSelector('.alert p');
-  await element.toHaveText('Invalid email or password.');
-  //await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');   
+  await expect.soft(page.locator('.alert')).toHaveText('Invalid email or password.');   
 });
 
 
