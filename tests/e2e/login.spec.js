@@ -18,9 +18,9 @@ test('expect login success and logout success', async ({ page }) => {
     //await expect(waitResult.textContent()).toHaveText('Logged in successfully.');
 
     // create a locator
-    const noteLink = page.locator('text=Notes');
+    //const noteLink = page.locator('text=Notes');
     // Expect an attribute "to be strictly equal" to the value.
-    await expect(noteLink).toHaveAttribute('href', '/notes')
+    //await expect(noteLink).toHaveAttribute('href', '/notes')
   
     await expect.soft(page.locator('div.notice p')).toHaveText('Logged in successfully.');    
 
@@ -43,7 +43,7 @@ test('expect login failed', async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // Make a few checks that will not stop the test when failed...
-  await expect.soft(page.locator('.alert')).toHaveText('Invalid email or password.');   
+  await expect.soft(page.locator('div.alert p')).toHaveText('Invalid email or password.');   
 });
 
 
