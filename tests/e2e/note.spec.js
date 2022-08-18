@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
 
   await expect.soft(page.locator('text=Signup')).toHaveText('Signup');
 
-  await expect.soft(page.locator('text=Notes')).toHaveText('notes');
+  await expect.soft(page.locator('text=Notes')).toHaveText('Notes');
 
   // Avoid running further if there were soft assertion failures.
   expect(test.info().errors).toHaveLength(0);
