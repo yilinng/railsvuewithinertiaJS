@@ -13,7 +13,7 @@ const env = {
 const config = {
 
   // Each test is given 30 seconds
-  //timeout: 50000,
+  timeout: 30000,
 
   // Forbid test.only on CI
   forbidOnly: !!process.env.CI,
