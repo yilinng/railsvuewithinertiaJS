@@ -6,7 +6,10 @@ test.describe.configure({ mode: 'serial' });
 let page;
 
 test.beforeAll(async ({ page }) => {
-  page = await browser.newPage();
+  // Create a new incognito browser context
+  const context = await browser.newContext();
+  // Create a new page inside context.
+  const page = await context.newPage();
   await page.goto('/login');
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*login/);
@@ -30,7 +33,9 @@ test.afterAll(async () => {
 
 
 test('expect login success and show noteList', async ({ page }) => {
-
+    const context = await browser.newContext();
+    // Create a new page inside context.
+    const page = await context.newPage();
 
     const newnoteLink = page.locator('text=New Note');
 

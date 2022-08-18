@@ -28,7 +28,7 @@ test('expect signup failed with invaild email', async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // Make a few checks that will not stop the test when failed...
-  await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.', { timeout: 50000 });
+  await expect.soft(page.locator('.alert p')).not.toHaveText('Logged in successfully.');
      
 });
 
