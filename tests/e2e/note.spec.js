@@ -1,10 +1,9 @@
 const { test, expect } = require('@playwright/test');
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('/signup');
+  await page.goto('/login');
   // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*signup/);
-  await page.locator('input[id="username"]').fill('test123 playwright');
+  await expect(page).toHaveURL(/.*login/);
   await page.locator('input[id="email"]').fill('test12@test.com');
   await page.locator('input[id="password"]').fill('test12');
   await page.locator('button[type="submit"]').click();
@@ -18,16 +17,9 @@ test.beforeEach(async ({ page }) => {
   // Click the get notes link.
   //await noteLink.click();
 
-  await expect.soft(page.locator('text=Signup')).toHaveAttribute('href', '/signup');
+  await page.goto('/notes');
 
-  await expect.soft(page.locator('text=Notes')).toHaveAttribute('href', '/notes');
-
-  // Avoid running further if there were soft assertion failures.
-  expect(test.info().errors).toHaveLength(0);
-
-  //await page.goto('/notes');
-
-  //await expect(page).toHaveURL(/.*notes/);
+  await expect(page).toHaveURL(/.*notes/);
 });
 
 

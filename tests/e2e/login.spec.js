@@ -28,7 +28,7 @@ test('expect login failed', async ({ page }) => {
   // Make a few checks that will not stop the test when failed...
   //await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.'); 
   //await expect.soft(page.locator('.notice p')).not.toHaveText('Logged in successfully.');
-  await expect(page).toHaveURL(/.*login/);      
+  //await expect(page).toHaveURL(/.*login/);      
 });
 
 
