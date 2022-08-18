@@ -6,8 +6,7 @@ test.describe.configure({ mode: 'serial' });
 let page;
 
 test.beforeAll(async ({ page }) => {
-  const context = await browser.newContext();
-  page = await context.newPage();
+  page = await browser.newPage();
   await page.goto('/login');
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*login/);
