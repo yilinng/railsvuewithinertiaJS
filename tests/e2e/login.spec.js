@@ -8,21 +8,8 @@ test('expect login success and logout success', async ({ page }) => {
     await page.locator('input[id="email"]').fill('test12@test.com');
     await page.locator('input[id="password"]').fill('test12');
     await page.locator('button[type="submit"]').click();
-
-    //await page.waitForNavigation();
-
-    //const waitResult = await page.waitForSelector('div.notice p')
-
-    //console.log(waitResult.textContent(), 'from login.spec....')
-
-    //await expect(waitResult.textContent()).toHaveText('Logged in successfully.');
-
-    // create a locator
-    //const noteLink = page.locator('text=Notes');
-    // Expect an attribute "to be strictly equal" to the value.
-    //await expect(noteLink).toHaveAttribute('href', '/notes')
   
-    await expect.soft(page.locator('div.notice p')).toHaveText('Logged in successfully.');    
+    await expect.soft(page.locator('div.notice p')).toHaveText('Logged in successfully.', { timeout: 30000 });    
 
     //await page.locator('text=Logout').click();
 
@@ -43,7 +30,7 @@ test('expect login failed', async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // Make a few checks that will not stop the test when failed...
-  await expect.soft(page.locator('div.alert p')).toHaveText('Invalid email or password.');   
+  await expect.soft(page.locator('div.alert p')).toHaveText('Invalid email or password.', { timeout: 30000 });   
 });
 
 

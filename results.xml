@@ -1,6 +1,82 @@
-<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="19.016427999999372">
-<testsuite name="tests\e2e\note.spec.js" timestamp="1660796666323" hostname="" tests="7" failures="0" skipped="0" time="31.037" errors="0">
-<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:13:1 › expect login success and show noteList" time="4.04">
+<testsuites id="" name="" tests="14" failures="0" skipped="0" errors="0" time="26.465512000000103">
+<testsuite name="tests\e2e\home.spec.js" timestamp="1660804892449" hostname="" tests="1" failures="0" skipped="0" time="3.936" errors="0">
+<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[chromium] › tests\e2e\home.spec.js:24:1 › homepage has Railsvue in title and get started link linking to the login page" time="3.936">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\test-finished-1.png]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="tests\e2e\login.spec.js" timestamp="1660804892449" hostname="" tests="5" failures="0" skipped="0" time="15.501" errors="0">
+<testcase name="expect login success and logout success" classname="[chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="5.105">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\test-finished-1.png]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
+</testcase>
+<testcase name="expect login failed" classname="[chromium] › tests\e2e\login.spec.js:36:1 › expect login failed" time="3.103">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="expect login failed with missing email" classname="[chromium] › tests\e2e\login.spec.js:50:1 › expect login failed with missing email" time="2.442">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="expect login failed with missing password" classname="[chromium] › tests\e2e\login.spec.js:63:1 › expect login failed with missing password" time="2.622">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="expect redirect to login page" classname="[chromium] › tests\e2e\login.spec.js:76:1 › expect redirect to login page" time="2.229">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\e2e\note.spec.js" timestamp="1660804892449" hostname="" tests="7" failures="0" skipped="0" time="26.11" errors="0">
+<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:22:1 › expect login success and show noteList" time="3.907">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\trace.zip]]
@@ -8,17 +84,8 @@
 [[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\test-finished-1.png]]
 ]]>
 </system-out>
-<system-err>
-<![CDATA[WARNING: running on unsupported windows version!
-Host system is missing dependencies!
-
-Full list of missing libraries:
-    api-ms-win-core-winrt-error-l1-1-0.dll
-
-]]>
-</system-err>
 </testcase>
-<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:36:1 › create new note success" time="5.118">
+<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:38:1 › create new note success" time="3.937">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\trace.zip]]
@@ -26,17 +93,8 @@ Full list of missing libraries:
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\test-finished-1.png]]
 ]]>
 </system-out>
-<system-err>
-<![CDATA[WARNING: running on unsupported windows version!
-Host system is missing dependencies!
-
-Full list of missing libraries:
-    api-ms-win-core-winrt-error-l1-1-0.dll
-
-]]>
-</system-err>
 </testcase>
-<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:65:1 › create new note but missing title" time="5.42">
+<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:59:1 › create new note but missing title" time="3.661">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\trace.zip]]
@@ -45,7 +103,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:94:1 › create new note but missing content" time="4.168">
+<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:80:1 › create new note but missing content" time="3.578">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\trace.zip]]
@@ -54,7 +112,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:123:1 › update note success" time="4.188">
+<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:101:1 › update note success" time="4.069">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-update-note-success-chromium\trace.zip]]
@@ -63,7 +121,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:149:1 › show note success" time="4.394">
+<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:117:1 › show note success" time="3.417">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-show-note-success-chromium\trace.zip]]
@@ -72,12 +130,23 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:171:1 › delete note success" time="3.709">
+<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:132:1 › delete note success" time="3.541">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\trace.zip]]
 
 [[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="tests\e2e\signup.spec.js" timestamp="1660804892449" hostname="" tests="1" failures="0" skipped="0" time="2.272" errors="0">
+<testcase name="expect signup success and logout" classname="[chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="2.272">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>

@@ -12,7 +12,7 @@ test.beforeEach(async ({ page }) => {
   const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes');
+  await expect(noteLink).toHaveAttribute('href', '/notes', { timeout: 30000 });
   
   // Click the get notes link.
   await noteLink.click();
