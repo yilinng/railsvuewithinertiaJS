@@ -6,6 +6,8 @@ test.describe.configure({ mode: 'serial' });
 let page;
 
 test.beforeAll(async ({ page }) => {
+  const context = await browser.newContext();
+  page = await context.newPage();
   await page.goto('/login');
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*login/);
@@ -27,7 +29,7 @@ test.afterAll(async () => {
   await page.close();
 });
 
-/*
+
 test('expect login success and show noteList', async ({ page }) => {
 
 
@@ -42,7 +44,7 @@ test('expect login success and show noteList', async ({ page }) => {
 
     //await expect(page).not.toHaveURL(/.*notes/);    
 });
-*/
+
 
 test('create new note success', async ({ page }) => {
 
