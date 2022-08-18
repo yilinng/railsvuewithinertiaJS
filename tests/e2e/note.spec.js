@@ -5,11 +5,11 @@ test.describe.configure({ mode: 'serial' });
 // @type {import('@playwright/test').Page} 
 let page;
 
-test.beforeAll(async ({ page }) => {
+test.beforeAll(async ({ browser }) => {
   // Create a new incognito browser context
   const context = await browser.newContext();
   // Create a new page inside context.
-  const page = await context.newPage();
+    page = await context.newPage();
   await page.goto('/login');
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*login/);
@@ -32,11 +32,8 @@ test.afterAll(async () => {
 });
 
 
-test('expect login success and show noteList', async ({ page }) => {
-    const context = await browser.newContext();
-    // Create a new page inside context.
-    const page = await context.newPage();
-
+test('expect login success and show noteList', async () => {
+  
     const newnoteLink = page.locator('text=New Note');
 
     // Expect an attribute "to be strictly equal" to the value.
@@ -50,7 +47,7 @@ test('expect login success and show noteList', async ({ page }) => {
 });
 
 
-test('create new note success', async ({ page }) => {
+test('create new note success', async () => {
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -71,7 +68,7 @@ test('create new note success', async ({ page }) => {
  
 });
 
-test('create new note but missing title', async ({ page }) => {
+test('create new note but missing title', async () => {
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -92,7 +89,7 @@ test('create new note but missing title', async ({ page }) => {
  
 });
 
-test('create new note but missing content', async ({ page }) => {
+test('create new note but missing content', async () => {
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -113,7 +110,7 @@ test('create new note but missing content', async ({ page }) => {
  
 });
 
-test('update note success', async ({ page }) => {
+test('update note success', async () => {
 
   const editLink = page.locator('text=Edit').last();
 
@@ -129,7 +126,7 @@ test('update note success', async ({ page }) => {
 
 });
 
-test('show note success', async ({ page }) => {
+test('show note success', async () => {
 
   const showLink = page.locator('.showLink').last();
  
@@ -144,7 +141,7 @@ test('show note success', async ({ page }) => {
 
 });
 
-test('delete note success', async ({ page }) => {
+test('delete note success', async () => {
 
   const deleteLink = page.locator('text=Delete').last();
  
