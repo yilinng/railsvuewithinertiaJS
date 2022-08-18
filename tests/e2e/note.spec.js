@@ -9,13 +9,22 @@ test.beforeEach(async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // create a locator
-  const noteLink = page.locator('text=Notes');
+  //const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  await expect(noteLink).toHaveAttribute('href', '/notes'), 
+  //await expect(noteLink).toHaveAttribute('href', '/notes'), 
   
   // Click the get notes link.
-  await noteLink.click();
+  //await noteLink.click();
+
+  await expect.soft(page.locator('text=Signup')).toHaveText('Signup');
+
+  await expect.soft(page.locator('text=Notes')).toHaveText('notes');
+
+  // Avoid running further if there were soft assertion failures.
+  expect(test.info().errors).toHaveLength(0);
+
+  await page.goto('/notes');
 
   await expect(page).toHaveURL(/.*notes/);
 });
