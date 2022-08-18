@@ -40,7 +40,7 @@ test('expect login success and show noteList', async ({ page }) => {
 });
 
 
-test('create new note success', ({ page }) => {
+test('create new note success', async ({ page }) => {
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -61,7 +61,7 @@ test('create new note success', ({ page }) => {
  
 });
 
-test('create new note but missing title', ({ page }) => {
+test('create new note but missing title', async ({ page }) => {
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -82,7 +82,7 @@ test('create new note but missing title', ({ page }) => {
  
 });
 
-test('create new note but missing content', ({ page })=> {
+test('create new note but missing content', async ({ page })=> {
 
   const newnoteLink = page.locator('text=New Note');
 
@@ -103,7 +103,7 @@ test('create new note but missing content', ({ page })=> {
  
 });
 
-test('update note success', ({ page }) => {
+test('update note success', async ({ page }) => {
 
   const editLink = page.locator('text=Edit').last();
 
@@ -119,7 +119,7 @@ test('update note success', ({ page }) => {
 
 });
 
-test('show note success', ({ page }) => {
+test('show note success', async ({ page }) => {
 
   const showLink = page.locator('.showLink').last();
  
@@ -134,7 +134,7 @@ test('show note success', ({ page }) => {
 
 });
 
-test('delete note success', ({ page }) => {
+test('delete note success', async ({ page }) => {
 
   const deleteLink = page.locator('text=Delete').last();
  
