@@ -27,7 +27,7 @@ test.afterAll(async () => {
   await page.close();
 });
 
-
+/*
 test('expect login success and show noteList', async ({ page }) => {
 
 
@@ -42,7 +42,7 @@ test('expect login success and show noteList', async ({ page }) => {
 
     //await expect(page).not.toHaveURL(/.*notes/);    
 });
-
+*/
 
 test('create new note success', async ({ page }) => {
 
