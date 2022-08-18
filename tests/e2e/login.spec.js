@@ -11,23 +11,28 @@ test('expect login success and logout success', async ({ page }) => {
 
     //await page.waitForNavigation();
 
-    const waitResult = await page.waitForSelector('div.notice p')
+    //const waitResult = await page.waitForSelector('div.notice p')
 
-    await expect(waitResult.textContent()).toHaveText('Logged in successfully.');
+    //console.log(waitResult.textContent(), 'from login.spec....')
+
+    //await expect(waitResult.textContent()).toHaveText('Logged in successfully.');
+
     // create a locator
-    //const noteLink = page.locator('text=Notes');
+    const noteLink = page.locator('text=Notes');
     // Expect an attribute "to be strictly equal" to the value.
-    //await expect(noteLink).toHaveAttribute('href', '/notes')
+    await expect(noteLink).toHaveAttribute('href', '/notes')
   
+    await expect.soft(page.locator('div.notice p')).toHaveText('Logged in successfully.');    
+
     //await page.locator('text=Logout').click();
 
     // Make a few checks that will not stop the test when failed...
-    //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
+    //await expect.soft(page.locator('div.notice p')).toHaveText('You have been logged out.');    
 
-    //await expect(page).not.toHaveURL(/.*login/);    
+    //await expect(page).not.toHaveURL(/.*notes/);    
 });
 
-/*
+
 test('expect login failed', async ({ page }) => {
 
   await page.goto('/login');
@@ -77,4 +82,3 @@ test('expect redirect to login page', async ({ page }) => {
   // Make a few checks that will not stop the test when failed...
   await expect.soft(page.locator('.notice p')).toHaveText('You must be logged in to perform that action.');    
 });
-*/

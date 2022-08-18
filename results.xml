@@ -1,82 +1,6 @@
-<testsuites id="" name="" tests="51" failures="3" skipped="0" errors="0" time="149.55080200000108">
-<testsuite name="tests\e2e\home.spec.js" timestamp="1660658588704" hostname="" tests="1" failures="0" skipped="0" time="2.792" errors="0">
-<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[chromium] › tests\e2e\home.spec.js:24:1 › homepage has Railsvue in title and get started link linking to the login page" time="2.792">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\test-finished-1.png]]
-]]>
-</system-out>
-<system-err>
-<![CDATA[WARNING: running on unsupported windows version!
-Host system is missing dependencies!
-
-Full list of missing libraries:
-    api-ms-win-core-winrt-error-l1-1-0.dll
-
-]]>
-</system-err>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\login.spec.js" timestamp="1660658588704" hostname="" tests="5" failures="0" skipped="0" time="13.496" errors="0">
-<testcase name="expect login success and logout success" classname="[chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="3.374">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\test-finished-1.png]]
-]]>
-</system-out>
-<system-err>
-<![CDATA[WARNING: running on unsupported windows version!
-Host system is missing dependencies!
-
-Full list of missing libraries:
-    api-ms-win-core-winrt-error-l1-1-0.dll
-
-]]>
-</system-err>
-</testcase>
-<testcase name="expect login failed" classname="[chromium] › tests\e2e\login.spec.js:28:1 › expect login failed" time="3.274">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed with missing email" classname="[chromium] › tests\e2e\login.spec.js:42:1 › expect login failed with missing email" time="2.398">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed with missing password" classname="[chromium] › tests\e2e\login.spec.js:55:1 › expect login failed with missing password" time="2.316">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect redirect to login page" classname="[chromium] › tests\e2e\login.spec.js:68:1 › expect redirect to login page" time="2.134">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\note.spec.js" timestamp="1660658588704" hostname="" tests="7" failures="0" skipped="0" time="27.319" errors="0">
-<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:13:1 › expect login success and show noteList" time="3.806">
+<testsuites id="" name="" tests="7" failures="0" skipped="0" errors="0" time="19.016427999999372">
+<testsuite name="tests\e2e\note.spec.js" timestamp="1660796666323" hostname="" tests="7" failures="0" skipped="0" time="31.037" errors="0">
+<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:13:1 › expect login success and show noteList" time="4.04">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\trace.zip]]
@@ -84,8 +8,17 @@ Full list of missing libraries:
 [[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\test-finished-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:36:1 › create new note success" time="4.491">
+<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:36:1 › create new note success" time="5.118">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\trace.zip]]
@@ -93,8 +26,17 @@ Full list of missing libraries:
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\test-finished-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:65:1 › create new note but missing title" time="3.999">
+<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:65:1 › create new note but missing title" time="5.42">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\trace.zip]]
@@ -103,7 +45,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:94:1 › create new note but missing content" time="4.357">
+<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:94:1 › create new note but missing content" time="4.168">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\trace.zip]]
@@ -112,7 +54,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:123:1 › update note success" time="3.784">
+<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:123:1 › update note success" time="4.188">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-update-note-success-chromium\trace.zip]]
@@ -121,7 +63,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:149:1 › show note success" time="3.279">
+<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:149:1 › show note success" time="4.394">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-show-note-success-chromium\trace.zip]]
@@ -130,492 +72,12 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:171:1 › delete note success" time="3.603">
+<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:171:1 › delete note success" time="3.709">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\trace.zip]]
 
 [[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\signup.spec.js" timestamp="1660658588704" hostname="" tests="4" failures="1" skipped="0" time="40.902" errors="0">
-<testcase name="expect signup success and logout" classname="[chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="30">
-<failure message="signup.spec.js:3:1 expect signup success and logout" type="FAILURE">
-<![CDATA[  [chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout =====================
-
-    Test timeout of 30000ms exceeded.
-
-    locator.click: Target closed
-    =========================== logs ===========================
-    waiting for selector "text=Logout"
-    ============================================================
-
-      15 |     const logoutBtn = page.locator('text=Logout');
-      16 |
-    > 17 |     await logoutBtn.click();
-         |                     ^
-      18 |
-      19 |     await expect(page).not.toHaveURL(/.*notes/);      
-      20 | });
-
-        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:17:21
-
-    Pending operations:
-      - locator.click at tests\e2e\signup.spec.js:17:21
-
-
-    attachment #1: trace (application/zip) ---------------------------------------------------------
-    test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip
-
-    ------------------------------------------------------------------------------------------------
-
-    attachment #2: screenshot (image/png) ----------------------------------------------------------
-    test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-failed-1.png
-    ------------------------------------------------------------------------------------------------
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-failed-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with invaild email" classname="[chromium] › tests\e2e\signup.spec.js:22:1 › expect signup failed with invaild email" time="5.481">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\test-finished-1.png]]
-]]>
-</system-out>
-<system-err>
-<![CDATA[WARNING: running on unsupported windows version!
-Host system is missing dependencies!
-
-Full list of missing libraries:
-    api-ms-win-core-winrt-error-l1-1-0.dll
-
-]]>
-</system-err>
-</testcase>
-<testcase name="expect signup failed with missing email" classname="[chromium] › tests\e2e\signup.spec.js:37:1 › expect signup failed with missing email" time="2.747">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with missing password" classname="[chromium] › tests\e2e\signup.spec.js:51:1 › expect signup failed with missing password" time="2.674">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\home.spec.js" timestamp="1660658588704" hostname="" tests="1" failures="0" skipped="0" time="5.469" errors="0">
-<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[firefox] › tests\e2e\home.spec.js:24:1 › homepage has Railsvue in title and get started link linking to the login page" time="5.469">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\login.spec.js" timestamp="1660658588704" hostname="" tests="5" failures="0" skipped="0" time="15.252" errors="0">
-<testcase name="expect login success and logout success" classname="[firefox] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="3.284">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed" classname="[firefox] › tests\e2e\login.spec.js:28:1 › expect login failed" time="2.881">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed with missing email" classname="[firefox] › tests\e2e\login.spec.js:42:1 › expect login failed with missing email" time="2.988">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed with missing password" classname="[firefox] › tests\e2e\login.spec.js:55:1 › expect login failed with missing password" time="3.899">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect redirect to login page" classname="[firefox] › tests\e2e\login.spec.js:68:1 › expect redirect to login page" time="2.2">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\note.spec.js" timestamp="1660658588704" hostname="" tests="7" failures="0" skipped="0" time="31.632" errors="0">
-<testcase name="expect login success and show noteList" classname="[firefox] › tests\e2e\note.spec.js:13:1 › expect login success and show noteList" time="3.565">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="create new note success" classname="[firefox] › tests\e2e\note.spec.js:36:1 › create new note success" time="8.718">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="create new note but missing title" classname="[firefox] › tests\e2e\note.spec.js:65:1 › create new note but missing title" time="3.943">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="create new note but missing content" classname="[firefox] › tests\e2e\note.spec.js:94:1 › create new note but missing content" time="4.196">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="update note success" classname="[firefox] › tests\e2e\note.spec.js:123:1 › update note success" time="3.93">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-update-note-success-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-update-note-success-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="show note success" classname="[firefox] › tests\e2e\note.spec.js:149:1 › show note success" time="3.392">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-show-note-success-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-show-note-success-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="delete note success" classname="[firefox] › tests\e2e\note.spec.js:171:1 › delete note success" time="3.888">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\signup.spec.js" timestamp="1660658588704" hostname="" tests="4" failures="1" skipped="0" time="39.811" errors="0">
-<testcase name="expect signup success and logout" classname="[firefox] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="30.003">
-<failure message="signup.spec.js:3:1 expect signup success and logout" type="FAILURE">
-<![CDATA[  [firefox] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout ======================
-
-    Test timeout of 30000ms exceeded.
-
-    locator.click: Target closed
-    =========================== logs ===========================
-    waiting for selector "text=Logout"
-    ============================================================
-
-      15 |     const logoutBtn = page.locator('text=Logout');
-      16 |
-    > 17 |     await logoutBtn.click();
-         |                     ^
-      18 |
-      19 |     await expect(page).not.toHaveURL(/.*notes/);      
-      20 | });
-
-        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:17:21
-
-    Pending operations:
-      - locator.click at tests\e2e\signup.spec.js:17:21
-
-
-    attachment #1: trace (application/zip) ---------------------------------------------------------
-    test-results\tests-e2e-signup-expect-signup-success-and-logout-firefox\trace.zip
-    Usage:
-
-        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-success-and-logout-firefox\trace.zip
-
-    ------------------------------------------------------------------------------------------------
-
-    attachment #2: screenshot (image/png) ----------------------------------------------------------
-    test-results\tests-e2e-signup-expect-signup-success-and-logout-firefox\test-failed-1.png
-    ------------------------------------------------------------------------------------------------
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-firefox\test-failed-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with invaild email" classname="[firefox] › tests\e2e\signup.spec.js:22:1 › expect signup failed with invaild email" time="5.244">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with missing email" classname="[firefox] › tests\e2e\signup.spec.js:37:1 › expect signup failed with missing email" time="2.489">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with missing password" classname="[firefox] › tests\e2e\signup.spec.js:51:1 › expect signup failed with missing password" time="2.075">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-firefox\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-firefox\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\home.spec.js" timestamp="1660658588704" hostname="" tests="1" failures="0" skipped="0" time="3.127" errors="0">
-<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[webkit] › tests\e2e\home.spec.js:24:1 › homepage has Railsvue in title and get started link linking to the login page" time="3.127">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\login.spec.js" timestamp="1660658588704" hostname="" tests="5" failures="0" skipped="0" time="16.991" errors="0">
-<testcase name="expect login success and logout success" classname="[webkit] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="4.15">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed" classname="[webkit] › tests\e2e\login.spec.js:28:1 › expect login failed" time="4.051">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed with missing email" classname="[webkit] › tests\e2e\login.spec.js:42:1 › expect login failed with missing email" time="2.984">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect login failed with missing password" classname="[webkit] › tests\e2e\login.spec.js:55:1 › expect login failed with missing password" time="2.772">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect redirect to login page" classname="[webkit] › tests\e2e\login.spec.js:68:1 › expect redirect to login page" time="3.034">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\note.spec.js" timestamp="1660658588704" hostname="" tests="7" failures="0" skipped="0" time="32.366" errors="0">
-<testcase name="expect login success and show noteList" classname="[webkit] › tests\e2e\note.spec.js:13:1 › expect login success and show noteList" time="5.019">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="create new note success" classname="[webkit] › tests\e2e\note.spec.js:36:1 › create new note success" time="4.869">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="create new note but missing title" classname="[webkit] › tests\e2e\note.spec.js:65:1 › create new note but missing title" time="4.484">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="create new note but missing content" classname="[webkit] › tests\e2e\note.spec.js:94:1 › create new note but missing content" time="4.429">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="update note success" classname="[webkit] › tests\e2e\note.spec.js:123:1 › update note success" time="4.811">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-update-note-success-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-update-note-success-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="show note success" classname="[webkit] › tests\e2e\note.spec.js:149:1 › show note success" time="4.215">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-show-note-success-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-show-note-success-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="delete note success" classname="[webkit] › tests\e2e\note.spec.js:171:1 › delete note success" time="4.539">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-</testsuite>
-<testsuite name="tests\e2e\signup.spec.js" timestamp="1660658588704" hostname="" tests="4" failures="1" skipped="0" time="37.78" errors="0">
-<testcase name="expect signup success and logout" classname="[webkit] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="29.998">
-<failure message="signup.spec.js:3:1 expect signup success and logout" type="FAILURE">
-<![CDATA[  [webkit] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout =======================
-
-    Test timeout of 30000ms exceeded.
-
-    locator.click: Target closed
-    =========================== logs ===========================
-    waiting for selector "text=Logout"
-    ============================================================
-
-      15 |     const logoutBtn = page.locator('text=Logout');
-      16 |
-    > 17 |     await logoutBtn.click();
-         |                     ^
-      18 |
-      19 |     await expect(page).not.toHaveURL(/.*notes/);      
-      20 | });
-
-        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:17:21
-
-    Pending operations:
-      - locator.click at tests\e2e\signup.spec.js:17:21
-
-
-    attachment #1: trace (application/zip) ---------------------------------------------------------
-    test-results\tests-e2e-signup-expect-signup-success-and-logout-webkit\trace.zip
-    Usage:
-
-        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-success-and-logout-webkit\trace.zip
-
-    ------------------------------------------------------------------------------------------------
-
-    attachment #2: screenshot (image/png) ----------------------------------------------------------
-    test-results\tests-e2e-signup-expect-signup-success-and-logout-webkit\test-failed-1.png
-    ------------------------------------------------------------------------------------------------
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-webkit\test-failed-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with invaild email" classname="[webkit] › tests\e2e\signup.spec.js:22:1 › expect signup failed with invaild email" time="3.218">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with missing email" classname="[webkit] › tests\e2e\signup.spec.js:37:1 › expect signup failed with missing email" time="2.203">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-webkit\test-finished-1.png]]
-]]>
-</system-out>
-</testcase>
-<testcase name="expect signup failed with missing password" classname="[webkit] › tests\e2e\signup.spec.js:51:1 › expect signup failed with missing password" time="2.361">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-webkit\trace.zip]]
-
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-webkit\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>

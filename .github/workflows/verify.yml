@@ -85,7 +85,7 @@ jobs:
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
         run: |
-          npx playwright test 
+          npx playwright test --project=chromium
 
       - uses: actions/upload-artifact@v2
         if: always()
