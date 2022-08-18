@@ -16,6 +16,8 @@ test('expect signup success and logout', async ({ page }) => {
     await expect(page).not.toHaveURL(/.*notes/);      
 });
 
+/*
+
 test('expect signup failed with invaild email', async ({ page }) => {
 
   await page.goto('/signup');
@@ -59,3 +61,4 @@ test('expect signup failed with missing password', async ({ page }) => {
   await expect.soft(page.locator('.text-red-500')).toHaveText('password have to input..');    
 });
 
+*/

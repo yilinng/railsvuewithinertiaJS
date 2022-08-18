@@ -9,7 +9,7 @@ test('expect login success and logout success', async ({ page }) => {
     await page.locator('input[id="password"]').fill('test12');
     await page.locator('button[type="submit"]').click();
 
-    await page.waitForNavigation();
+    //await page.waitForNavigation();
 
     const waitResult = await page.waitForSelector('div.notice p')
 
@@ -27,7 +27,7 @@ test('expect login success and logout success', async ({ page }) => {
     //await expect(page).not.toHaveURL(/.*login/);    
 });
 
-
+/*
 test('expect login failed', async ({ page }) => {
 
   await page.goto('/login');
@@ -77,3 +77,4 @@ test('expect redirect to login page', async ({ page }) => {
   // Make a few checks that will not stop the test when failed...
   await expect.soft(page.locator('.notice p')).toHaveText('You must be logged in to perform that action.');    
 });
+*/
