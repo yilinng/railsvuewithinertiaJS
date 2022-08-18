@@ -20,10 +20,6 @@ test.beforeEach(async ({ page }) => {
   await expect(page).toHaveURL(/.*notes/);
 });
 
-test.afterAll(async () => {
-  await page.close();
-});
-
 
 test('expect login success and show noteList', async ({ page }) => {
   
