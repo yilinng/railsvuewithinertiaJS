@@ -1,6 +1,11 @@
 const { test, expect } = require('@playwright/test');
 
-test.beforeEach(async ({ page }) => {
+test.describe.configure({ mode: 'serial' });
+
+// @type {import('@playwright/test').Page} 
+let page;
+
+test.beforeAll(async ({ page }) => {
   await page.goto('/login');
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*login/);
@@ -16,6 +21,10 @@ test.beforeEach(async ({ page }) => {
   
   // Click the get notes link.
   await noteLink.click();
+});
+
+test.afterAll(async () => {
+  await page.close();
 });
 
 
