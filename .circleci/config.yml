@@ -80,8 +80,8 @@ jobs:
           name: rspec test
           command: bundle exec rspec spec/requests
       - run:
-          name: playwright test
-          command: npx playwright test --project=chromium
+          name: playwright install and test
+          command: npx playwright install && npx playwright test --project=chromium
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
