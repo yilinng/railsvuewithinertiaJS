@@ -46,7 +46,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
 
-      - image: mcr.microsoft.com/playwright:v1.24.1-focal
+      - image: mcr.microsoft.com/playwright:v1.24.0-focal
         environment:
           NODE_ENV: development
   
