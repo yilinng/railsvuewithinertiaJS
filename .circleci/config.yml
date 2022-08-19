@@ -62,15 +62,18 @@ jobs:
       - run:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database setup
+          command: bundle exec rails db:drop db:prepare
+              
       - run:
           name: Start server in the background
           command: |
             bundle exec rails server &
             sleep 5 && 
             curl http://localhost:3000 -I       
-      - run:
-          name: Database setup
-          command: bundle exec rails db:prepare    
+
       # Run rspec in parallel
       - run:
           name: rspec test

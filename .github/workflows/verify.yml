@@ -59,7 +59,7 @@ jobs:
           DB_USER_PASSWORD: postgres
           DB_USER: postgres
         run: |
-          bundle exec rails db:prepare
+          bundle exec rails db:drop db:prepare
 
       - name: Start server in the background
         env:
