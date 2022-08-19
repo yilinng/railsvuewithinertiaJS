@@ -13,6 +13,15 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_RETRY: 3
+          BUNDLER_VERSION: 2.0.1
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+          PG_HOST: 127.0.0.1
+          PGUSER: railsvue 
     steps:
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
@@ -34,9 +43,14 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_PATH: vendor/bundle
+          BUNDLE_RETRY: 3
+          BUNDLER_VERSION: 2.0.1
           RAILS_ENV: test
-          PGHOST: 127.0.0.1
-          PGUSER: root  
+          DB_HOST: 127.0.0.1
+          PG_HOST: 127.0.0.1
+          PGUSER: railsvue   
 
     # Service container image available at `host: localhost`
       - image: cimg/postgres:14.0
@@ -44,8 +58,8 @@ jobs:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment: # add POSTGRES environment variables.
-          POSTGRES_USER: circleci-demo-ruby
-          POSTGRES_DB: rails_blog_test
+          POSTGRES_USER: railsvue
+          POSTGRES_DB: railsvue_test
           POSTGRES_PASSWORD: ""
 
       - image: mcr.microsoft.com/playwright:v1.25.0-focal
