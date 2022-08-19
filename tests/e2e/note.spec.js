@@ -9,15 +9,15 @@ test.beforeEach(async ({ page }) => {
   await page.locator('button[type="submit"]').click();
 
   // create a locator
-  //const noteLink = page.locator('text=Notes');
+  const noteLink = page.locator('text=Notes');
 
   // Expect an attribute "to be strictly equal" to the value.
-  //await expect(noteLink).toHaveAttribute('href', '/notes'), 
+  await expect(noteLink).toHaveAttribute('href', '/notes', { timeout: 60000 }) 
   
   // Click the get notes link.
-  //await noteLink.click();
+  await noteLink.click();
 
-  await page.goto('/notes');
+  //await page.goto('/notes');
 
   await expect(page).toHaveURL(/.*notes/);
 });
