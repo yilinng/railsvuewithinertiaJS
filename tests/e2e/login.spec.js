@@ -8,25 +8,18 @@ test('expect login success and logout success', async ({ page }) => {
     await page.locator('input[id="email"]').fill('test12@test.com');
     await page.locator('input[id="password"]').fill('test12');
     await page.locator('button[type="submit"]').click();
-  
-    // create a locator
-    //const noteLink = page.locator('text=Notes');
+ 
+    const logoutBtn = page.locator('text=Logout');
 
-    // Expect an attribute "to be strictly equal" to the value.
-    //await expect(noteLink).toHaveAttribute('href', '/notes');
-    //await expect.soft(page.locator('.notice p')).toHaveText('Logged in successfully.');    
-
-    //const logoutBtn = page.locator('text=Logout');
-
-    //await logoutBtn.click();
+    await logoutBtn.click();
 
     // Make a few checks that will not stop the test when failed...
-    //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
+    await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
 
     // Avoid running further if there were soft assertion failures.
-    //expect(test.info().errors).toHaveLength(0);
+    expect(test.info().errors).toHaveLength(0);
 
-    //await expect(page).not.toHaveURL(/.*notes/);  
+    await expect(page).not.toHaveURL(/.*notes/);  
 });
 
 
