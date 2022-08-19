@@ -76,7 +76,7 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
-         DB_USER: postgres
+          DB_USER: postgres
         run: |
           bundle exec rspec spec/requests
 
