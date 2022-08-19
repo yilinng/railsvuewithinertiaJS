@@ -17,8 +17,8 @@ test('expect login success and logout success', async ({ page }) => {
     const orderSent = page.locator('div.navbar span');
     await orderSent.waitFor();
 
-    await expect.soft(orderSent).toHaveText('Logout');
-    await expect.soft(orderSent).toHaveText('Login');
+    await expect.soft(orderSent).toHaveText('NotesLogout');
+    await expect.soft(orderSent).toHaveText('LoginSignup');
     expect(test.info().errors).toHaveLength(0);
 });
 

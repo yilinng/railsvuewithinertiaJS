@@ -14,7 +14,13 @@ test('expect signup success and logout', async ({ page }) => {
     //await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');
     //await expect(page.locator('.notice p'), 'Signup in successfully.').toBeVisible();   
 
-    //await expect(page).not.toHaveURL(/.*signup/);      
+    //await expect(page).not.toHaveURL(/.*signup/);
+    const orderSent = page.locator('div.navbar span');
+    await orderSent.waitFor();
+
+    await expect.soft(orderSent).toHaveText('NotesLogout');
+    await expect.soft(orderSent).toHaveText('LoginSignup');
+    expect(test.info().errors).toHaveLength(0);      
 });
 
 
