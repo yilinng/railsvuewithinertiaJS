@@ -63,13 +63,19 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
+          name: Start server in the background
+          command: |
+            bundle exec rails server &
+            sleep 5 && 
+            curl http://localhost:3000 -I       
+      - run:
           name: Database setup
-          command: bundle exec rails db:prepare
+          command: bundle exec rails db:prepare    
       # Run rspec in parallel
       - run:
           name: rspec test
           command: bundle exec rspec spec/requests
-       - run:
+      - run:
           name: playwright test
           command: npx playwright test --project=chromium
 
