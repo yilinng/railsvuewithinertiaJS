@@ -12,6 +12,8 @@ test('expect login success and logout success', async ({ page }) => {
     // create a locator
     //const noteLink = page.locator('text=Notes');
 
+    test.setTimeout(10000);
+
     // Expect an attribute "to be strictly equal" to the value.
     //await expect(noteLink).toHaveAttribute('href', '/notes');
     await expect.soft(page.locator('.notice p')).toHaveText('Logged in successfully.');    
