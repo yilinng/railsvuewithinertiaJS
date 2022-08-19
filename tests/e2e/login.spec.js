@@ -12,7 +12,14 @@ test('expect login success and logout success', async ({ page }) => {
     //await expect.soft(page.locator('.notice p')).toHaveText('Logged in successfully.');
     //await expect.soft(page.locator('.alert p')).not.toHaveText('Invalid email or password.');
     //await expect(page.locator('.notice p'), 'Logged in successfully.').toBeVisible();   
-    //await expect(page).not.toHaveURL(/.*login/);    
+    //await expect(page).not.toHaveURL(/.*login/);
+    //wait for certain element state change
+    const orderSent = page.locator('div.navbar span');
+    await orderSent.waitFor();
+
+    await expect.soft(orderSent).toHaveText('Logout');
+    await expect.soft(orderSent).toHaveText('Login');
+    expect(test.info().errors).toHaveLength(0);
 });
 
 

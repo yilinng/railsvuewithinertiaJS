@@ -3,7 +3,7 @@
     <div>
       <Link href="/" class="text-teal-500 font-bold">InertiaApp</Link>
     </div>
-    <div class="font-medium">
+    <div class="font-medium navbar">
       <span v-if="!$page.props.auth.user">
         <Link href="/login" class="text-gray-600 hover:text-gray-800 mr-2">Login</Link>
         <Link href="/signup" class="text-gray-600 hover:text-gray-800">Signup</Link>
