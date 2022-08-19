@@ -57,6 +57,7 @@ jobs:
           POSTGRES_HOST: localhost
           RAILS_ENV: test
           DB_USER_PASSWORD: postgres
+          DB_USER: postgres
         run: |
           bundle exec rails db:prepare
 
@@ -75,6 +76,7 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
+         DB_USER: postgres
         run: |
           bundle exec rspec spec/requests
 
@@ -84,6 +86,7 @@ jobs:
           DB_HOST: localhost
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
+          DB_USER: postgres
         run: |
           npx playwright test --project=chromium
 
