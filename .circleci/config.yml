@@ -10,17 +10,10 @@ jobs:
   build: # our first job, named "build"
     docker:
       - image: cimg/ruby:2.7.3-node # use a tailored CircleCI docker image.
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
-          BUNDLE_JOBS: 3
-          BUNDLE_PATH: vendor/bundle
-          BUNDLE_RETRY: 3
-          BUNDLER_VERSION: 2.0.1
           RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          PG_HOST: 127.0.0.1
+          DB_HOST: localhost
+          PG_HOST: localhost
           PGUSER: railsvue 
     steps:
       - checkout # pull down our git code.
@@ -39,41 +32,23 @@ jobs:
     # here we set TWO docker images.
     docker:
       - image: cimg/ruby:2.7.3-node # this is our primary docker image, where step commands run.
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
-          BUNDLE_JOBS: 3
-          BUNDLE_PATH: vendor/bundle
-          BUNDLE_RETRY: 3
-          BUNDLER_VERSION: 2.0.1
           RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          PG_HOST: 127.0.0.1
-          PGUSER: railsvue   
+          DB_HOST: localhost
+          PG_HOST: localhost
+          PGUSER: postgres
+          DB_USER: postgres
+          DB_USER_PASSWORD: postgres 
 
     # Service container image available at `host: localhost`
       - image: cimg/postgres:14.0
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment: # add POSTGRES environment variables.
-          POSTGRES_USER: railsvue
-          POSTGRES_DB: railsvue_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
 
       - image: mcr.microsoft.com/playwright:v1.25.0-focal
         environment:
-          RAILS_ENV: test
-
-    # environment variables specific to Ruby/Rails, applied to the primary container.
-    environment:
-      BUNDLE_JOBS: "3"
-      BUNDLE_RETRY: "3"
-      PGHOST: 127.0.0.1
-      PGUSER: circleci-demo-ruby
-      PGPASSWORD: ""
-      RAILS_ENV: test
+          NODE_ENV: development
   
     # A series of steps to run, some are similar to those in "build".
     steps:
