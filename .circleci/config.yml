@@ -69,7 +69,7 @@ jobs:
       - run:
           name: rspec test
           command: bundle exec rspec spec/requests
-       - run:
+      - run:
           name: playwright test
           command: npx playwright test --project=chromium
 
