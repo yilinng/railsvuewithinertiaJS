@@ -68,12 +68,9 @@ jobs:
           command: bundle exec rails db:drop db:prepare
 
       - run:
-          name: Start application server
-          command: bin/rails s -d
-
-      - run:
-          name: Wait for application
-          command: dockerize -wait http://localhost:3000 -timeout 1m    
+          name: Ruby on Rails server
+          command: bin/rails server
+          background: true
 
       # Run rspec in parallel
       - run:
