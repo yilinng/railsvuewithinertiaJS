@@ -86,8 +86,12 @@ jobs:
           name: rspec test
           command: bundle exec rspec spec/requests
       - run:
-          name: playwright install and test
-          command: yarn run test 
+          name: Run Ruby on Rails server with playwright  test
+          command: |
+            bundle exec rails server &
+            sleep 5 && 
+            curl http://localhost:3000 -I &&
+            yarn test  
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
