@@ -57,6 +57,10 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           cache-key: "yarn.lock"
+
+      - run:
+          name: Install dependencies playwright
+          command: npx playwright install
       # Here we make sure that the secondary container boots
       # up before we run operations on the database.
       - run:
@@ -65,7 +69,7 @@ jobs:
 
       - run:
           name: Database setup
-          command: bundle exec db:prepare
+          command: bundle exec rails db:prepare
 
       - run:
           name: Ruby on Rails server
@@ -81,7 +85,7 @@ jobs:
           command: bundle exec rspec spec/requests
       - run:
           name: playwright install and test
-          command: yarn test
+          command: npx playwright test 
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
