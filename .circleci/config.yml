@@ -69,7 +69,10 @@ jobs:
 
       - run:
           name: Ruby on Rails server
-          command: bundle exec rails server  
+          command: |
+            bundle exec rails server &
+            sleep 5 && 
+            curl http://localhost:3000 -I    
           background: true
 
       # Run rspec in parallel
