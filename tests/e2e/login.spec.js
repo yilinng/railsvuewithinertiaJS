@@ -9,9 +9,9 @@ test('expect login success and logout success', async ({ page }) => {
     await page.locator('input[id="password"]').fill('test12');
     await page.locator('button[type="submit"]').click();
  
-    const logoutBtn = page.locator('text=Logout');
+    //const logoutBtn = page.locator('text=Logout');
 
-    await logoutBtn.click();
+    //await logoutBtn.click();
 
     // Make a few checks that will not stop the test when failed...
     //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
