@@ -14,7 +14,11 @@ jobs:
           RAILS_ENV: test
           DB_HOST: localhost
           PG_HOST: localhost
-          PGUSER: railsvue 
+          PGUSER: railsvue
+           
+      - image: mcr.microsoft.com/playwright:v1.24.0-focal
+        environment:
+          NODE_ENV: development    
     steps:
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
