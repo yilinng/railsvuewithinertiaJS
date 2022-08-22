@@ -58,6 +58,12 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           cache-key: "yarn.lock"
+ 
+      - run: 
+          name: Install dependencies
+          command: |  
+            npx playwright install-deps
+            npx playwright install    
 
       # Here we make sure that the secondary container boots
       # up before we run operations on the database.
@@ -77,7 +83,6 @@ jobs:
           name: Run Ruby on Rails server with playwright  test
           command: | 
             sleep 5 && bundle exec rails server &&
-            docker run -it --rm --ipc=host -v $(pwd):/tests  mcr.microsoft.com/playwright:v1.24.1-focal /bin/bash  &&
             yarn test
 
 # We use workflows to orchestrate the jobs that we declared above.
