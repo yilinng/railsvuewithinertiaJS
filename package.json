@@ -29,7 +29,9 @@
     }
   },
   "scripts": {
-    "test": "playwright test --project=chromium"
+    "test": "playwright test --browser=all",
+    "test-html-report": "playwright test --browser=all --reporter=html",
+    "test-json-report": "PLAYWRIGHT_JSON_OUTPUT_NAME=results.json playwright test --browser=chromium --reporter=json"
   },
   "dependencies": {
     "@inertiajs/inertia": "^0.11.0",
