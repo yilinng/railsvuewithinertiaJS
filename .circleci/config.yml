@@ -46,7 +46,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
 
-      - image: mcr.microsoft.com/playwright:v1.24.1-focal
+      - image: mcr.microsoft.com/playwright:v1.24.0-focal
         environment:
           NODE_ENV: development
   
@@ -65,7 +65,7 @@ jobs:
 
       - run:
           name: Database setup
-          command: bundle exec rails db:prepare
+          command: bundle exec db:prepare
 
       - run:
           name: Ruby on Rails server
@@ -80,8 +80,8 @@ jobs:
           name: rspec test
           command: bundle exec rspec spec/requests
       - run:
-          name: playwright test
-          command: yarn test 
+          name: playwright install and test
+          command: yarn test
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
