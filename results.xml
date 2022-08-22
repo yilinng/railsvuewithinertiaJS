@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="14" failures="0" skipped="0" errors="0" time="26.465512000000103">
-<testsuite name="tests\e2e\home.spec.js" timestamp="1660804892449" hostname="" tests="1" failures="0" skipped="0" time="3.936" errors="0">
-<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[chromium] › tests\e2e\home.spec.js:24:1 › homepage has Railsvue in title and get started link linking to the login page" time="3.936">
+<testsuites id="" name="" tests="17" failures="0" skipped="0" errors="0" time="30.320719999998808">
+<testsuite name="tests\e2e\home.spec.js" timestamp="1661143278838" hostname="" tests="1" failures="0" skipped="0" time="2.608" errors="0">
+<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[chromium] › tests\e2e\home.spec.js:3:1 › homepage has Railsvue in title and get started link linking to the login page" time="2.608">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\trace.zip]]
@@ -19,8 +19,8 @@ Full list of missing libraries:
 </system-err>
 </testcase>
 </testsuite>
-<testsuite name="tests\e2e\login.spec.js" timestamp="1660804892449" hostname="" tests="5" failures="0" skipped="0" time="15.501" errors="0">
-<testcase name="expect login success and logout success" classname="[chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="5.105">
+<testsuite name="tests\e2e\login.spec.js" timestamp="1661143278838" hostname="" tests="5" failures="0" skipped="0" time="13.202" errors="0">
+<testcase name="expect login success and logout success" classname="[chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="3.379">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\trace.zip]]
@@ -38,7 +38,7 @@ Full list of missing libraries:
 ]]>
 </system-err>
 </testcase>
-<testcase name="expect login failed" classname="[chromium] › tests\e2e\login.spec.js:36:1 › expect login failed" time="3.103">
+<testcase name="expect login failed" classname="[chromium] › tests\e2e\login.spec.js:26:1 › expect login failed" time="2.386">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\trace.zip]]
@@ -47,7 +47,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="expect login failed with missing email" classname="[chromium] › tests\e2e\login.spec.js:50:1 › expect login failed with missing email" time="2.442">
+<testcase name="expect login failed with missing email" classname="[chromium] › tests\e2e\login.spec.js:42:1 › expect login failed with missing email" time="2.242">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\trace.zip]]
@@ -56,7 +56,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="expect login failed with missing password" classname="[chromium] › tests\e2e\login.spec.js:63:1 › expect login failed with missing password" time="2.622">
+<testcase name="expect login failed with missing password" classname="[chromium] › tests\e2e\login.spec.js:55:1 › expect login failed with missing password" time="2.762">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\trace.zip]]
@@ -65,7 +65,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="expect redirect to login page" classname="[chromium] › tests\e2e\login.spec.js:76:1 › expect redirect to login page" time="2.229">
+<testcase name="expect redirect to login page" classname="[chromium] › tests\e2e\login.spec.js:68:1 › expect redirect to login page" time="2.433">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\trace.zip]]
@@ -75,8 +75,8 @@ Full list of missing libraries:
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="tests\e2e\note.spec.js" timestamp="1660804892449" hostname="" tests="7" failures="0" skipped="0" time="26.11" errors="0">
-<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:22:1 › expect login success and show noteList" time="3.907">
+<testsuite name="tests\e2e\note.spec.js" timestamp="1661143278838" hostname="" tests="7" failures="0" skipped="0" time="30.065" errors="0">
+<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:26:1 › expect login success and show noteList" time="4.191">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\trace.zip]]
@@ -85,7 +85,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:38:1 › create new note success" time="3.937">
+<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:41:1 › create new note success" time="4.343">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\trace.zip]]
@@ -94,7 +94,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:59:1 › create new note but missing title" time="3.661">
+<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:62:1 › create new note but missing title" time="4.364">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\trace.zip]]
@@ -103,7 +103,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:80:1 › create new note but missing content" time="3.578">
+<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:83:1 › create new note but missing content" time="3.615">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\trace.zip]]
@@ -112,7 +112,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:101:1 › update note success" time="4.069">
+<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:104:1 › update note success" time="5.134">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-update-note-success-chromium\trace.zip]]
@@ -121,7 +121,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:117:1 › show note success" time="3.417">
+<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:120:1 › show note success" time="4.335">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-show-note-success-chromium\trace.zip]]
@@ -130,7 +130,7 @@ Full list of missing libraries:
 ]]>
 </system-out>
 </testcase>
-<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:132:1 › delete note success" time="3.541">
+<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:135:1 › delete note success" time="4.083">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\trace.zip]]
@@ -140,13 +140,40 @@ Full list of missing libraries:
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="tests\e2e\signup.spec.js" timestamp="1660804892449" hostname="" tests="1" failures="0" skipped="0" time="2.272" errors="0">
-<testcase name="expect signup success and logout" classname="[chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="2.272">
+<testsuite name="tests\e2e\signup.spec.js" timestamp="1661143278838" hostname="" tests="4" failures="0" skipped="0" time="9.96" errors="0">
+<testcase name="expect signup success and logout" classname="[chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="2.156">
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip]]
 
 [[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="expect signup failed with invaild email" classname="[chromium] › tests\e2e\signup.spec.js:21:1 › expect signup failed with invaild email" time="2.473">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="expect signup failed with missing email" classname="[chromium] › tests\e2e\signup.spec.js:36:1 › expect signup failed with missing email" time="2.646">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="expect signup failed with missing password" classname="[chromium] › tests\e2e\signup.spec.js:50:1 › expect signup failed with missing password" time="2.685">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\trace.zip]]
+
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
