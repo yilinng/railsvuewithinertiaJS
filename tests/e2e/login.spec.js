@@ -9,6 +9,7 @@ test('expect login success and logout success', async ({ page }) => {
     await page.locator('input[id="password"]').fill('test12');
     await page.locator('button[type="submit"]').click();
  
+    await expect.soft(page.locator('text=Logout')).toHaveText('Logout');
     //const logoutBtn = page.locator('text=Logout');
 
     //await logoutBtn.click();
@@ -17,9 +18,9 @@ test('expect login success and logout success', async ({ page }) => {
     //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
 
     // Avoid running further if there were soft assertion failures.
-    //expect(test.info().errors).toHaveLength(0);
+    expect(test.info().errors).toHaveLength(0);
 
-    await expect(page).toHaveURL(/.*login/);  
+    await expect(page).not.toHaveURL(/.*login/);  
 });
 
 
