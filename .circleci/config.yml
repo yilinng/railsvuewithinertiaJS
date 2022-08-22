@@ -58,9 +58,6 @@ jobs:
           pkg-manager: yarn
           cache-key: "yarn.lock"
 
-      - run:
-          name: Install dependencies playwright
-          command: npx playwright install
       # Here we make sure that the secondary container boots
       # up before we run operations on the database.
       - run:
