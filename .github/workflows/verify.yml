@@ -67,9 +67,8 @@ jobs:
           RAILS_ENV: test
           POSTGRES_PASSWORD: postgres
         run: |
-          bundle exec rails server &
-          sleep 5 && 
-          curl http://localhost:3000 -I    
+          sleep 5 && bundle exec rails server 
+           
 
       - name: Build and test with rspec
         env:
