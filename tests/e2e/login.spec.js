@@ -13,9 +13,10 @@ test('expect login success and logout success', async ({ page }) => {
     //const logoutBtn = page.locator('text=Logout');
 
     //await logoutBtn.click();
+    await expect.soft(page).not.toHaveURL(/.*login/);  
 
     // Make a few checks that will not stop the test when failed...
-    //await expect.soft(page.locator('.notice p')).toHaveText('You have been logged out.');    
+    await expect.soft(page.locator('.notice p')).toHaveText('Logged in successfully.');    
 
     // Avoid running further if there were soft assertion failures.
     expect(test.info().errors).toHaveLength(0);
