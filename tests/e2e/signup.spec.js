@@ -9,12 +9,16 @@ test('expect signup success and logout', async ({ page }) => {
     await page.locator('input[id="email"]').fill('test123@test.com');
     await page.locator('input[id="password"]').fill('test123');
     await page.locator('button[type="submit"]').click();
+
+    await expect.soft(page).not.toHaveURL(/.*signup/);  
   
     // Make a few checks that will not stop the test when failed...
-    //await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');
-    //await expect(page.locator('.notice p'), 'Signup in successfully.').toBeVisible();   
+    await expect.soft(page.locator('.alert p')).toHaveText('Invalid email or password.');
+    await expect.soft(page.locator('.notice p')).toHaveText( 'Signup in successfully.');   
 
-    //await expect(page).not.toHaveURL(/.*signup/);      
+    expect(test.info().errors).toHaveLength(0);
+
+    await expect(page).not.toHaveURL(/.*signup/);      
 });
 
 
