@@ -1,10 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches: [ lastmain ]
-  pull_request:
-    branches: [ lastmain ]
+on: [push]
 
 jobs:
   test:
@@ -36,9 +32,7 @@ jobs:
       - name: Install dependencies
         run: | 
           npm ci
-          npx playwright install-deps
-          npx playwright install
-          
+
       - name: Install Dependencies
         run: |
           sudo apt install -yqq libpq-dev
@@ -81,15 +75,9 @@ jobs:
         run: |
           bundle exec rspec spec/requests
 
-      - name: Run and test with Playwright tests
-        continue-on-error: false
-        env:
-          DB_HOST: localhost
-          RAILS_ENV: test
-          POSTGRES_PASSWORD: postgres
-          DB_USER: postgres
-        run: |
-          npx playwright test
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+    
 
       - uses: actions/upload-artifact@v2
         if: always()

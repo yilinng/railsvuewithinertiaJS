@@ -21,8 +21,8 @@
             <span class="px-4 py-2 font-bold">Action</span>
             <span class="px-4 py-2"> 
               <Link :href="noteShow(note)" class="text-blue-700 mr-2 showLink">Show</Link>
-              <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
-              <button @click="onDelete(note)" class="text-red-700">Delete</button>    
+              <Link :href="noteEditShow(note)" class="text-green-700 mr-2 editLink">Edit</Link>
+              <button @click="onDelete(note)" class="text-red-700 deleteLink">Delete</button>    
             </span>
             <span class="px-4 py-2 font-bold">Async</span>
             <span class="px-4 py-2 font-bold">
@@ -48,8 +48,8 @@
             <td class="border px-4 py-2">{{ truncateString(note.content, 30) }}</td>
             <td class="border px-4 py-2">
                 <Link :href="noteShow(note)" class="text-blue-700 mr-2 showLink">Show</Link>
-                <Link :href="noteEditShow(note)" class="text-green-700 mr-2">Edit</Link>
-                <button @click="onDelete(note)" class="text-red-700">Delete</button>
+                <Link :href="noteEditShow(note)" class="text-green-700 mr-2 editLink">Edit</Link>
+                <button @click="onDelete(note)" class="text-red-700 deleteLink">Delete</button>
             </td>
             <td class="border px-4 py-2">
                 <button @click="noteLike(note)" class="text-yellow-500 mr-2">
