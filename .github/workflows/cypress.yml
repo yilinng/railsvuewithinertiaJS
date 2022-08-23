@@ -1,4 +1,4 @@
-name: CI
+name: cypress
 
 on: [push]
 
@@ -76,14 +76,6 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
-
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30 
 
       - name: Create Coverage Artifact
         uses: actions/upload-artifact@v2
