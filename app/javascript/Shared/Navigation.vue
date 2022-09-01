@@ -21,16 +21,15 @@ import { Inertia } from '@inertiajs/inertia'
 
 export default {
   components: {
-    Link,
+    Link
   },
   methods: {
     onLogout() {
-        Inertia.delete('/logout', {
-          onBefore: () => confirm('Are you sure you want to logout?'),
-          onSuccess: (page) => console.log('logout success', page)
-        })
-      }
+      Inertia.delete('/logout', {
+        onBefore: () => confirm('Are you sure you want to logout?'),
+        onSuccess: (page) => console.log('logout success', page)
+      })
     }
-  
+  }
 }
 </script>

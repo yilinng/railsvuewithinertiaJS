@@ -15,7 +15,7 @@ jobs:
           DB_HOST: localhost
           PG_HOST: localhost
           PGUSER: railsvue
-  
+
     steps:
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
@@ -24,9 +24,9 @@ jobs:
       # learn more: https://circleci.com/docs/caching/
       - node/install-packages:
           pkg-manager: yarn
-          cache-key: "yarn.lock"
+          cache-key: 'yarn.lock'
 
-  test:  # our next job, called "test"
+  test: # our next job, called "test"
     # we run "parallel job containers" to enable speeding up our tests;
     # this splits our tests across multiple containers.
     parallelism: 3
@@ -39,9 +39,9 @@ jobs:
           PG_HOST: localhost
           PGUSER: postgres
           DB_USER: postgres
-          DB_USER_PASSWORD: postgres 
+          DB_USER_PASSWORD: postgres
 
-    # Service container image available at `host: localhost`
+      # Service container image available at `host: localhost`
       - image: cimg/postgres:14.0
         environment: # add POSTGRES environment variables.
           POSTGRES_USER: postgres
@@ -50,20 +50,20 @@ jobs:
       - image: mcr.microsoft.com/playwright:v1.24.0-focal
         environment:
           NODE_ENV: development
-  
+
     # A series of steps to run, some are similar to those in "build".
     steps:
       - checkout
       - ruby/install-deps
       - node/install-packages:
           pkg-manager: yarn
-          cache-key: "yarn.lock"
- 
-      - run: 
+          cache-key: 'yarn.lock'
+
+      - run:
           name: Install dependencies
-          command: |  
+          command: |
             npx playwright install-deps
-            npx playwright install    
+            npx playwright install
 
       # Here we make sure that the secondary container boots
       # up before we run operations on the database.
@@ -85,14 +85,14 @@ jobs:
             bundle exec rails server &
             sleep 5 && 
             curl http://localhost:3000 -I &&
-            yarn test 
+            yarn test
 
 # We use workflows to orchestrate the jobs that we declared above.
 workflows:
   version: 2
-  build_and_test:     # The name of our workflow is "build_and_test"
-    jobs:             # The list of jobs we run as part of this workflow.
-      - build         # Run build first.
-      - test:         # Then run test,
-          requires:   # Test requires that build passes for it to run.
-            - build   # Finally, run the build job.
+  build_and_test: # The name of our workflow is "build_and_test"
+    jobs: # The list of jobs we run as part of this workflow.
+      - build # Run build first.
+      - test: # Then run test,
+          requires: # Test requires that build passes for it to run.
+            - build # Finally, run the build job.

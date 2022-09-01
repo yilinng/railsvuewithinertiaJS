@@ -50,29 +50,27 @@ Cypress.Commands.add("signup", () => {
 
 })
 */
-Cypress.Commands.add("login", () => {
-  const email = 'test12@test.com';
+Cypress.Commands.add('login', () => {
+  const email = 'test12@test.com'
   const password = 'test12'
   cy.visit('/login')
 
-    
   // Fill out the form
-  cy.get('input[id=email]').type(email);
-  cy.get('input[id=password]').type(`${password}`);
+  cy.get('input[id=email]').type(email)
+  cy.get('input[id=password]').type(`${password}`)
 
   // Click the sign-in button
-  cy.get('button[type=submit]').click();
-  
+  cy.get('button[type=submit]').click()
+
   //show logout and notes
   cy.contains('Notes').should('have.attr', 'href', '/notes')
   cy.get('.navbar button').contains('Logout')
 
   //show login success
   cy.get('.notice p').should('contain', 'Logged in successfully.')
-
 })
 
-Cypress.Commands.add("logout", () => {
+Cypress.Commands.add('logout', () => {
   // Click logout
   cy.get('.navbar button').contains('Logout').click()
 

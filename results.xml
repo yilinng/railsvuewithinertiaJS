@@ -1,11 +1,42 @@
-<testsuites id="" name="" tests="17" failures="0" skipped="0" errors="0" time="30.320719999998808">
-<testsuite name="tests\e2e\home.spec.js" timestamp="1661143278838" hostname="" tests="1" failures="0" skipped="0" time="2.608" errors="0">
-<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[chromium] › tests\e2e\home.spec.js:3:1 › homepage has Railsvue in title and get started link linking to the login page" time="2.608">
+<testsuites id="" name="" tests="17" failures="17" skipped="0" errors="0" time="26.008610999997707">
+<testsuite name="tests\e2e\home.spec.js" timestamp="1661332605007" hostname="" tests="1" failures="1" skipped="0" time="1.025" errors="0">
+<testcase name="homepage has Railsvue in title and get started link linking to the login page" classname="[chromium] › tests\e2e\home.spec.js:3:1 › homepage has Railsvue in title and get started link linking to the login page" time="1.025">
+<failure message="home.spec.js:3:1 homepage has Railsvue in title and get started link linking to the login page" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\home.spec.js:3:1 › homepage has Railsvue in title and get started link linking to the login page 
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test('homepage has Railsvue in title and get started link linking to the login page', async ({ page }) => {
+    > 4 |   await page.goto('/');
+        |              ^
+      5 |
+      6 |   // Expect a title "to contain" a substring.
+      7 |   await expect(page).toHaveTitle(/Railsvue/);
+
+        at D:\userPract\pract\railsvue\tests\e2e\home.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-home-homepage-has-Railsvue-in-title-and-get-started-link-linking-to-the-login-page-chromium\test-failed-1.png]]
 ]]>
 </system-out>
 <system-err>
@@ -19,13 +50,44 @@ Full list of missing libraries:
 </system-err>
 </testcase>
 </testsuite>
-<testsuite name="tests\e2e\login.spec.js" timestamp="1661143278838" hostname="" tests="5" failures="0" skipped="0" time="13.202" errors="0">
-<testcase name="expect login success and logout success" classname="[chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="3.379">
+<testsuite name="tests\e2e\login.spec.js" timestamp="1661332605007" hostname="" tests="5" failures="5" skipped="0" time="5.029" errors="0">
+<testcase name="expect login success and logout success" classname="[chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success" time="0.992">
+<failure message="login.spec.js:3:1 expect login success and logout success" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\login.spec.js:3:1 › expect login success and logout success ===============
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      3 | test('expect login success and logout success', async ({ page }) => {
+      4 |
+    > 5 |     await page.goto('/login');
+        |                ^
+      6 |     // Expects the URL to contain intro.
+      7 |     await expect(page).toHaveURL(/.*login/);
+      8 |     await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\login.spec.js:5:16
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-success-and-logout-success-chromium\test-failed-1.png]]
 ]]>
 </system-out>
 <system-err>
@@ -38,144 +100,744 @@ Full list of missing libraries:
 ]]>
 </system-err>
 </testcase>
-<testcase name="expect login failed" classname="[chromium] › tests\e2e\login.spec.js:26:1 › expect login failed" time="2.386">
+<testcase name="expect login failed" classname="[chromium] › tests\e2e\login.spec.js:29:1 › expect login failed" time="0.914">
+<failure message="login.spec.js:29:1 expect login failed" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\login.spec.js:29:1 › expect login failed ==================================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      29 | test('expect login failed', async ({ page }) => {
+      30 |
+    > 31 |   await page.goto('/login');
+         |              ^
+      32 |   // Expects the URL to contain intro.
+      33 |   await expect(page).toHaveURL(/.*login/);
+      34 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\login.spec.js:31:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-failed-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-login-expect-login-failed-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-failed-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="expect login failed with missing email" classname="[chromium] › tests\e2e\login.spec.js:42:1 › expect login failed with missing email" time="2.242">
+<testcase name="expect login failed with missing email" classname="[chromium] › tests\e2e\login.spec.js:45:1 › expect login failed with missing email" time="0.899">
+<failure message="login.spec.js:45:1 expect login failed with missing email" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\login.spec.js:45:1 › expect login failed with missing email ===============
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      45 | test('expect login failed with missing email', async ({ page }) => {
+      46 |
+    > 47 |   await page.goto('/login');
+         |              ^
+      48 |   // Expects the URL to contain intro.
+      49 |   await expect(page).toHaveURL(/.*login/);
+      50 |   //await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\login.spec.js:47:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-email-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="expect login failed with missing password" classname="[chromium] › tests\e2e\login.spec.js:55:1 › expect login failed with missing password" time="2.762">
+<testcase name="expect login failed with missing password" classname="[chromium] › tests\e2e\login.spec.js:58:1 › expect login failed with missing password" time="1.091">
+<failure message="login.spec.js:58:1 expect login failed with missing password" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\login.spec.js:58:1 › expect login failed with missing password ============
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      58 | test('expect login failed with missing password', async ({ page }) => {
+      59 |
+    > 60 |   await page.goto('/login');
+         |              ^
+      61 |   // Expects the URL to contain intro.
+      62 |   await expect(page).toHaveURL(/.*login/);
+      63 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\login.spec.js:60:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-login-expect-login-failed-with-missing-password-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="expect redirect to login page" classname="[chromium] › tests\e2e\login.spec.js:68:1 › expect redirect to login page" time="2.433">
+<testcase name="expect redirect to login page" classname="[chromium] › tests\e2e\login.spec.js:71:1 › expect redirect to login page" time="1.133">
+<failure message="login.spec.js:71:1 expect redirect to login page" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\login.spec.js:71:1 › expect redirect to login page ========================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/notes
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/notes", waiting until "load"
+    ============================================================
+
+      71 | test('expect redirect to login page', async ({ page }) => {
+      72 |
+    > 73 |   await page.goto('/notes');
+         |              ^
+      74 |   // Expects the URL to contain intro.
+      75 |   await expect(page).toHaveURL(/.*login/);
+      76 |
+
+        at D:\userPract\pract\railsvue\tests\e2e\login.spec.js:73:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-login-expect-redirect-to-login-page-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
 </testsuite>
-<testsuite name="tests\e2e\note.spec.js" timestamp="1661143278838" hostname="" tests="7" failures="0" skipped="0" time="30.065" errors="0">
-<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:26:1 › expect login success and show noteList" time="4.191">
+<testsuite name="tests\e2e\note.spec.js" timestamp="1661332605007" hostname="" tests="7" failures="7" skipped="0" time="8.872" errors="0">
+<testcase name="expect login success and show noteList" classname="[chromium] › tests\e2e\note.spec.js:26:1 › expect login success and show noteList" time="1.429">
+<failure message="note.spec.js:26:1 expect login success and show noteList" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:26:1 › expect login success and show noteList ================
+
+    page.goto: net::ERR_CONNECTION_RESET at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-expect-login-success-and-show-noteList-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:41:1 › create new note success" time="4.343">
+<testcase name="create new note success" classname="[chromium] › tests\e2e\note.spec.js:41:1 › create new note success" time="1.344">
+<failure message="note.spec.js:41:1 create new note success" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:41:1 › create new note success ===============================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-create-new-note-success-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-create-new-note-success-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-create-new-note-success-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-success-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:62:1 › create new note but missing title" time="4.364">
+<testcase name="create new note but missing title" classname="[chromium] › tests\e2e\note.spec.js:62:1 › create new note but missing title" time="1.236">
+<failure message="note.spec.js:62:1 create new note but missing title" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:62:1 › create new note but missing title =====================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-title-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:83:1 › create new note but missing content" time="3.615">
+<testcase name="create new note but missing content" classname="[chromium] › tests\e2e\note.spec.js:83:1 › create new note but missing content" time="1.151">
+<failure message="note.spec.js:83:1 create new note but missing content" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:83:1 › create new note but missing content ===================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-create-new-note-but-missing-content-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:104:1 › update note success" time="5.134">
+<testcase name="update note success" classname="[chromium] › tests\e2e\note.spec.js:104:1 › update note success" time="1.134">
+<failure message="note.spec.js:104:1 update note success" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:104:1 › update note success ==================================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-update-note-success-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-update-note-success-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-update-note-success-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-update-note-success-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-update-note-success-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-update-note-success-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:120:1 › show note success" time="4.335">
+<testcase name="show note success" classname="[chromium] › tests\e2e\note.spec.js:120:1 › show note success" time="1.228">
+<failure message="note.spec.js:120:1 show note success" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:120:1 › show note success ====================================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-show-note-success-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-show-note-success-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-show-note-success-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-show-note-success-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-show-note-success-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-show-note-success-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:135:1 › delete note success" time="4.083">
+<testcase name="delete note success" classname="[chromium] › tests\e2e\note.spec.js:135:1 › delete note success" time="1.35">
+<failure message="note.spec.js:135:1 delete note success" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\note.spec.js:135:1 › delete note success ==================================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/login
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/login", waiting until "load"
+    ============================================================
+
+      2 |
+      3 | test.beforeEach(async ({ page }) => {
+    > 4 |   await page.goto('/login');
+        |              ^
+      5 |   // Expects the URL to contain intro.
+      6 |   await expect(page).toHaveURL(/.*login/);
+      7 |   await page.locator('input[id="email"]').fill('test12@test.com');
+
+        at D:\userPract\pract\railsvue\tests\e2e\note.spec.js:4:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-note-delete-note-success-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-note-delete-note-success-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-note-delete-note-success-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-note-delete-note-success-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
 </testsuite>
-<testsuite name="tests\e2e\signup.spec.js" timestamp="1661143278838" hostname="" tests="4" failures="0" skipped="0" time="9.96" errors="0">
-<testcase name="expect signup success and logout" classname="[chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="2.156">
+<testsuite name="tests\e2e\signup.spec.js" timestamp="1661332605007" hostname="" tests="4" failures="4" skipped="0" time="4.453" errors="0">
+<testcase name="expect signup success and logout" classname="[chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout" time="1.276">
+<failure message="signup.spec.js:3:1 expect signup success and logout" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\signup.spec.js:3:1 › expect signup success and logout =====================
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/signup
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/signup", waiting until "load"
+    ============================================================
+
+      3 | test('expect signup success and logout', async ({ page }) => {
+      4 |
+    > 5 |     await page.goto('/signup');
+        |                ^
+      6 |     // Expects the URL to contain intro.
+      7 |     await expect(page).toHaveURL(/.*signup/);
+      8 |     await page.locator('input[id="username"]').fill('test123 playwright');
+
+        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:5:16
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-success-and-logout-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="expect signup failed with invaild email" classname="[chromium] › tests\e2e\signup.spec.js:21:1 › expect signup failed with invaild email" time="2.473">
+<testcase name="expect signup failed with invaild email" classname="[chromium] › tests\e2e\signup.spec.js:25:1 › expect signup failed with invaild email" time="1.19">
+<failure message="signup.spec.js:25:1 expect signup failed with invaild email" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\signup.spec.js:25:1 › expect signup failed with invaild email =============
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/signup
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/signup", waiting until "load"
+    ============================================================
+
+      25 | test('expect signup failed with invaild email', async ({ page }) => {
+      26 |
+    > 27 |   await page.goto('/signup');
+         |              ^
+      28 |   // Expects the URL to contain intro.
+      29 |   await expect(page).toHaveURL(/.*signup/);
+      30 |   await page.locator('input[id="username"]').fill('test12 playwright');
+
+        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:27:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-invaild-email-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="expect signup failed with missing email" classname="[chromium] › tests\e2e\signup.spec.js:36:1 › expect signup failed with missing email" time="2.646">
+<testcase name="expect signup failed with missing email" classname="[chromium] › tests\e2e\signup.spec.js:40:1 › expect signup failed with missing email" time="1.123">
+<failure message="signup.spec.js:40:1 expect signup failed with missing email" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\signup.spec.js:40:1 › expect signup failed with missing email =============
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/signup
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/signup", waiting until "load"
+    ============================================================
+
+      40 | test('expect signup failed with missing email', async ({ page }) => {
+      41 |
+    > 42 |   await page.goto('/signup');
+         |              ^
+      43 |   // Expects the URL to contain intro.
+      44 |   await expect(page).toHaveURL(/.*signup/);
+      45 |   await page.locator('input[id="username"]').fill('test12 playwright');
+
+        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:42:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-email-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
-<testcase name="expect signup failed with missing password" classname="[chromium] › tests\e2e\signup.spec.js:50:1 › expect signup failed with missing password" time="2.685">
+<testcase name="expect signup failed with missing password" classname="[chromium] › tests\e2e\signup.spec.js:54:1 › expect signup failed with missing password" time="0.864">
+<failure message="signup.spec.js:54:1 expect signup failed with missing password" type="FAILURE">
+<![CDATA[  [chromium] › tests\e2e\signup.spec.js:54:1 › expect signup failed with missing password ==========
+
+    page.goto: net::ERR_SOCKET_NOT_CONNECTED at http://localhost:3000/signup
+    =========================== logs ===========================
+    navigating to "http://localhost:3000/signup", waiting until "load"
+    ============================================================
+
+      54 | test('expect signup failed with missing password', async ({ page }) => {
+      55 |
+    > 56 |   await page.goto('/signup');
+         |              ^
+      57 |   // Expects the URL to contain intro.
+      58 |   await expect(page).toHaveURL(/.*signup/);
+      59 |   await page.locator('input[id="username"]').fill('test12 playwright');
+
+        at D:\userPract\pract\railsvue\tests\e2e\signup.spec.js:56:14
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+    attachment #2: screenshot (image/png) ----------------------------------------------------------
+    test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\test-failed-1.png
+    ------------------------------------------------------------------------------------------------
+]]>
+</failure>
 <system-out>
 <![CDATA[
 [[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\trace.zip]]
 
-[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\test-finished-1.png]]
+[[ATTACHMENT|test-results\tests-e2e-signup-expect-signup-failed-with-missing-password-chromium\test-failed-1.png]]
 ]]>
 </system-out>
+<system-err>
+<![CDATA[WARNING: running on unsupported windows version!
+Host system is missing dependencies!
+
+Full list of missing libraries:
+    api-ms-win-core-winrt-error-l1-1-0.dll
+
+]]>
+</system-err>
 </testcase>
 </testsuite>
 </testsuites>

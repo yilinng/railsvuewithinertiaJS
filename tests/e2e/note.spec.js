@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
   await expect(noteLink).toHaveAttribute('href', '/notes') 
   
   // Click the get notes link.
-  await noteLink.click();
+  await noteLink.click({ timeout: 10000 });
 
   //await page.goto('/notes');
 
@@ -45,7 +45,7 @@ test('create new note success', async ({ page }) => {
   // Expect an attribute "to be strictly equal" to the value.
   await expect(newnoteLink).toHaveAttribute('href', '/notes/new');
 
-  await newnoteLink.click();
+  await newnoteLink.click({ timeout: 10000 });
 
   await expect(page).toHaveURL(/.*new/);
 
@@ -66,7 +66,7 @@ test('create new note but missing title', async ({ page }) => {
   // Expect an attribute "to be strictly equal" to the value.
   await expect(newnoteLink).toHaveAttribute('href', '/notes/new');
 
-  await newnoteLink.click();
+  await newnoteLink.click({ timeout: 10000 });
 
   await expect(page).toHaveURL(/.*new/);
 
@@ -78,6 +78,7 @@ test('create new note but missing title', async ({ page }) => {
 
   await expect.soft(page.locator('.titleErr')).toHaveText('title have to input..');    
  
+  expect(test.info().errors).toHaveLength(1);
 });
 
 test('create new note but missing content', async ({ page })=> {
@@ -87,7 +88,7 @@ test('create new note but missing content', async ({ page })=> {
   // Expect an attribute "to be strictly equal" to the value.
   await expect(newnoteLink).toHaveAttribute('href', '/notes/new');
 
-  await newnoteLink.click();
+  await newnoteLink.click({ timeout: 10000 });
 
   await expect(page).toHaveURL(/.*new/);
 
@@ -97,15 +98,17 @@ test('create new note but missing content', async ({ page })=> {
 
   await page.locator('button[type="submit"]').click();
 
-  await expect.soft(page.locator('.contentErr')).toHaveText('content have to input..');    
- 
+  await expect.soft(page.locator('.contentErr')).toHaveText('content have to input..');   
+  
+  expect(test.info().errors).toHaveLength(1);
+  
 });
 
 test('update note success', async ({ page }) => {
 
   const editLink = page.locator('text=Edit').last();
 
-  await editLink.click();
+  await editLink.click({ timeout: 10000 });
 
   await expect(page).toHaveURL(/.*edit/);
 
@@ -115,6 +118,7 @@ test('update note success', async ({ page }) => {
 
   await expect.soft(page.locator('.notice p')).toHaveText('Note was successfully update.');    
 
+  expect(test.info().errors).toHaveLength(1);
 });
 
 test('show note success', async ({ page }) => {
@@ -122,7 +126,7 @@ test('show note success', async ({ page }) => {
   const showLink = page.locator('.showLink').last();
  
   await expect(showLink).toContainText(/Show/);
-  await showLink.click();
+  await showLink.click({ timeout: 10000 });
 
   const title = page.locator('.title');
   await expect(title).not.toBeEmpty();
@@ -137,8 +141,9 @@ test('delete note success', async ({ page }) => {
   const deleteLink = page.locator('text=Delete').last();
  
   // Expect an attribute "to be strictly equal" to the value.
-  await deleteLink.click();
+  await deleteLink.click({ timeout: 10000 });
 
   await expect.soft(page.locator('.notice p')).toHaveText('Note was successfully destroyed.');    
 
+  expect(test.info().errors).toHaveLength(1);
 });

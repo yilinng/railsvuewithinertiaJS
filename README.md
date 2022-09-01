@@ -5,13 +5,29 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version 2.7.3
+-   Ruby version 2.7.3
 
-* Initial setup 
+-   Ruby on rails version 6.1.6
+
+-   Database PostgreSQL
+
+-   Vue3
+
+-   tailwindcss
+
+-   #### https://inertiajs.com/
+
+-   Initial setup
+
+#### To start up the application in your local Docker environment:
+
+```
+git clone https://github.com/yilinng/railsvuewithinertiaJS.git
+cd railsvuewithinertiaJS
 docker-compose build
-docker-compose exec web bash
-root@d0cf1ad9ff4c:/app# rake db:reset
-root@d0cf1ad9ff4c:/app# rails webpacker:install key n on all options
+docker-compose up
+```
 
-* Running the Rails app
-docker-compose up or docker-compose up -d
+### Endpoint tests use rspec
+
+### End-to-end tests use cypress and playwright

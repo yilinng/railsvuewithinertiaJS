@@ -1,11 +1,15 @@
 name: cypress
 
-on: [push]
+on:
+  push:
+    branches: [lastmain]
+  pull_request:
+    branches: [lastmain]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    services: 
+    services:
       postgres:
         image: postgres:12
         ports:
@@ -40,7 +44,7 @@ jobs:
       - name: Install gems
         run: |
           bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3    
+          bundle install --jobs 4 --retry 3
 
       - name: Start Redis
         uses: supercharge/redis-github-action@1.4.0
@@ -62,8 +66,7 @@ jobs:
         run: |
           bundle exec rails server &
           sleep 5 && 
-          curl http://localhost:3000 -I 
-           
+          curl http://localhost:3000 -I
 
       - name: Build and test with rspec
         env:
@@ -78,7 +81,8 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-          wait-on: 'http://localhost:3000/'
+          wait-on:
+            'http://localhost:3000/'
             # wait for 2 minutes for the server to respond
           wait-on-timeout: 120
 
@@ -88,18 +92,16 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
-          
+
       - name: Upload videos as artifacts
         uses: actions/upload-artifact@v1
         if: always()
         with:
           name: cypress-videos
-          path: cypress/videos    
+          path: cypress/videos
 
       - name: Create Coverage Artifact
         uses: actions/upload-artifact@v2
         with:
           name: code-coverage
           path: coverage/
-           
-
